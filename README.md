@@ -24,6 +24,7 @@
   - GitHubの人気リポジトリ情報
   - 人気エンジニア関連ツイート
   - 技術イベント・カンファレンス情報
+  - 自分の投稿
   - 新刊情報
     - https://www.amazon.co.jp/gp/bestsellers/english-books/2635017051
 
