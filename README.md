@@ -2,7 +2,7 @@
 
 ## イメージ図
 
-..
+https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-type=canvas&t=5EaYmCT2W2UTurp4-0
 
 ## キャッチコピー
 
