@@ -46,6 +46,9 @@
 
 ## 仕様技術
 
+- デザイン
+  - [Figma](https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-type=canvas&t=MFktjLmhUWArNq1p-0)
+
 ## システムアーキテクチャ
 
 ## コード設計・アーキテクチャ
