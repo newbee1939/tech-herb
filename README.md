@@ -60,8 +60,9 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
     - 今回の要件として、静的サイトジェネレータ(SSG)で十分
       - ゼロJS
         - JavaScriptのオーバーヘッドと複雑さを低減
+        - クライアントJavaScriptの実行によるインタラクティブなUIはほとんど不要なので
       - サーバーファースト
-    - 高速
+    - 高速・高パフォーマンス
     - 自由なUI
       - React、Preact、Svelte、Vue、Solid、Lit、HTMX、ウェブコンポーネントなどをサポートしているので、特定のライブラリにロックされない
       - アイランドアーキテクチャにより、コンポーネントごとに柔軟にライブラリを選定可能
@@ -69,7 +70,12 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
       - 参考: https://developers.cloudflare.com/workers/frameworks/framework-guides/astro/
       - より高速な動作が可能に
 - インフラ
-  - Cloudflare Workers
+  - Cloudflare Pages
+    - 無料なのに、リクエスト数、帯域幅が無制限
+    - デプロイがシンプル
+      1. GitHub リポジトリと連携する
+      2. 利用するフレームワークや環境変数をセットする
+      3. デプロイを待つ
 - CI/CD
   - GitHub Actions
 - エディタ
@@ -84,3 +90,8 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 - [個人開発における開発プロセスを公開してみる](https://qiita.com/himatani/items/3b8301da2e889e962e5e)
 - [【個人開発・ポートフォリオに】無料で簡単にいい感じのデザインにできるサービスまとめ](https://qiita.com/aiandrox/items/4196c8f5b564d29fdce7)
 - [[Astro×Hono×Fresh対談] Next.jsじゃないFWが見据えるフロントエンドの未来 #フロントエンドの未来](https://offers.jp/media/event-report/a_4875)
+- [Web サービスを無料で手軽にモダンなインフラにデプロイしよう！](https://zenn.dev/lovegraph/articles/56f8d5f28ba1c3)
+- [しずかなインターネットの技術構成](https://zenn.dev/catnose99/articles/f8a90a1616dfb3)
+- [Next.jsアプリをVercelからGoogle Cloudに移行した話](https://zenn.dev/team_zenn/articles/5e9547a5c207e3)
+- [チーム個々人のテックブログをRSSで集約するサイトを作った（Next.js）](https://zenn.dev/catnose99/articles/cb72a73368a547756862)
+- [Zennを支える技術とサービス構成](https://zenn.dev/catnose99/articles/zenn-dev-stack)
