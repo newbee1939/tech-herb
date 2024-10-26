@@ -62,6 +62,8 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
         - JavaScriptのオーバーヘッドと複雑さを低減
         - クライアントJavaScriptの実行によるインタラクティブなUIはほとんど不要なので
       - サーバーファースト
+      - 定期的(一日一回)ビルドし直してコンテンツを生成する
+        - 参考: [定期的に自動ビルドする](https://zenn.dev/catnose99/articles/cb72a73368a547756862#%E5%AE%9A%E6%9C%9F%E7%9A%84%E3%81%AB%E8%87%AA%E5%8B%95%E3%83%93%E3%83%AB%E3%83%89%E3%81%99%E3%82%8B)
     - 高速・高パフォーマンス
     - 自由なUI
       - React、Preact、Svelte、Vue、Solid、Lit、HTMX、ウェブコンポーネントなどをサポートしているので、特定のライブラリにロックされない
