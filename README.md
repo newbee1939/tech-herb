@@ -101,6 +101,8 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
     - Cloudflare Workers との連携にも対応している
       - 参考: https://developers.cloudflare.com/workers/frameworks/framework-guides/astro/
       - より高速な動作が可能に
+- Linter/Formatter
+  - Biome
 - インフラ
   - Cloudflare Pages
     - 無料なのに、リクエスト数、帯域幅が無制限
