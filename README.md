@@ -55,6 +55,8 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 
 - デザイン
   - Figma
+- ランタイム
+  - Bun
 - フレームワーク
   - Astro
     - 今回の要件として、静的サイトジェネレータ(SSG)で十分
@@ -99,3 +101,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 - [Next.jsアプリをVercelからGoogle Cloudに移行した話](https://zenn.dev/team_zenn/articles/5e9547a5c207e3)
 - [チーム個々人のテックブログをRSSで集約するサイトを作った（Next.js）](https://zenn.dev/catnose99/articles/cb72a73368a547756862)
 - [Zennを支える技術とサービス構成](https://zenn.dev/catnose99/articles/zenn-dev-stack)
+- [AstroサイトをCloudflare Pagesにデプロイする](https://docs.astro.build/ja/guides/deploy/cloudflare/)
+- [Cloudflare Pagesで動作するAstro製ブログのランタイムをbunに移行した話](https://qiita.com/Yu_yukk_Y/items/0678fb8e04a093493502)
+- [AstroでBunを使う](https://docs.astro.build/ja/recipes/bun/)
+- [Build an app with Astro and Bun](https://bun.sh/guides/ecosystem/astro)
