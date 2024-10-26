@@ -54,7 +54,26 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 ## 使用技術
 
 - デザイン
-  - [Figma](https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-type=canvas&t=MFktjLmhUWArNq1p-0)
+  - Figma
+- フレームワーク
+  - Astro
+    - 今回の要件として、静的サイトジェネレータ(SSG)で十分
+      - ゼロJS
+        - JavaScriptのオーバーヘッドと複雑さを低減
+      - サーバーファースト
+    - 高速
+    - 自由なUI
+      - React、Preact、Svelte、Vue、Solid、Lit、HTMX、ウェブコンポーネントなどをサポートしているので、特定のライブラリにロックされない
+      - アイランドアーキテクチャにより、コンポーネントごとに柔軟にライブラリを選定可能
+    - Cloudflare Workersとの連携にも対応している
+      - 参考: https://developers.cloudflare.com/workers/frameworks/framework-guides/astro/
+      - より高速な動作が可能に
+- インフラ
+  - Cloudflare Workers
+- CI/CD
+  - GitHub Actions
+- エディタ
+  - VSCode 
 
 ## システムアーキテクチャ
 
