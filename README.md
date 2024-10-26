@@ -84,7 +84,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 - ランタイム
   - Node.js:v20.18.0
 - パッケージマネージャ
-  - npm:v
+  - npm:v10.8.2
 - フレームワーク
   - Astro:v4.10.0
     - 今回の要件として、静的サイトジェネレータ(SSG)で十分
