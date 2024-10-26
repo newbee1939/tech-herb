@@ -1,5 +1,23 @@
 # Tech Herb🌿
 
+## setup
+
+1. asdf で Bun をインストール
+
+```shell
+# Bunのプラグインを追加
+asdf plugin add bun
+# Bunのバージョンを確認
+asdf list all bun
+# 特定のBunをインストール
+asdf install bun 1.1.33
+# 現在のディレクトリで使用するBunのバージョンを指定
+asdf local bun 1.1.33
+
+# 既に.tool-versionsが存在する場合は以下のコマンドを実行する
+asdf install
+```
+
 ## イメージ図
 
 https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-type=canvas&t=5EaYmCT2W2UTurp4-0
@@ -58,7 +76,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 - パッケージ管理
   - asdf
 - ランタイム
-  - Bun
+  - Bun:v1.1.33
 - フレームワーク
   - Astro
     - 今回の要件として、静的サイトジェネレータ(SSG)で十分
