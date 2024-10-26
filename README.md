@@ -138,3 +138,4 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 - [Cloudflare Pages で動作する Astro 製ブログのランタイムを bun に移行した話](https://qiita.com/Yu_yukk_Y/items/0678fb8e04a093493502)
 - [Astro で Bun を使う](https://docs.astro.build/ja/recipes/bun/)
 - [Build an app with Astro and Bun](https://bun.sh/guides/ecosystem/astro)
+- [Partial support for Astro, Svelte and Vue files](https://biomejs.dev/blog/biome-v1-6/)
