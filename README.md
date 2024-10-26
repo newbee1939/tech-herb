@@ -55,10 +55,10 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 
 - デザイン
   - Figma
-- ランタイム
-  - Bun
 - パッケージ管理
-  - mise 
+  - mise  
+- ランタイム
+  - Bun 
 - フレームワーク
   - Astro
     - 今回の要件として、静的サイトジェネレータ(SSG)で十分
