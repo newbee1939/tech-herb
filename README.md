@@ -11,7 +11,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 ## コンセプト
 
 - あくまで「自分が見たい技術情報」を一元化して表示することに集中
-- Publickeyのように自分の好きな情報を好きなように発信するイメージ
+- Publickey のように自分の好きな情報を好きなように発信するイメージ
 - 自分の専門を書いておけば、偏っていても問題ない
 
 ## 解決したい課題
@@ -33,7 +33,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 - 表示したい技術情報
   - 技術記事(様々なサイト)
     - 新着記事
-      - Technology Radarなど新着がないものは普段は非表示
+      - Technology Radar など新着がないものは普段は非表示
       - たまに投稿されたらトップに分かりやすく表示
       - 差分更新
         - 必要なものだけ表示する
@@ -41,13 +41,13 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
     - タイトルクリックしたらメディア一覧へ
   - 技術動画
   - 技術音声
-  - GitHubのリリース情報
-  - GitHubの人気リポジトリ情報
+  - GitHub のリリース情報
+  - GitHub の人気リポジトリ情報
   - 人気エンジニア関連ツイート
     - 自分がまとめたリストを表示させる
   - 技術イベント・カンファレンス情報
   - 自分の投稿
-    - Zennのfeedなど？
+    - Zenn の feed など？
   - 新刊情報
     - https://www.amazon.co.jp/gp/bestsellers/english-books/2635017051
 
@@ -56,23 +56,23 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 - デザイン
   - Figma
 - パッケージ管理
-  - mise  
+  - asdf
 - ランタイム
-  - Bun 
+  - Bun
 - フレームワーク
   - Astro
     - 今回の要件として、静的サイトジェネレータ(SSG)で十分
-      - ゼロJS
-        - JavaScriptのオーバーヘッドと複雑さを低減
-        - クライアントJavaScriptの実行によるインタラクティブなUIはほとんど不要なので
+      - ゼロ JS
+        - JavaScript のオーバーヘッドと複雑さを低減
+        - クライアント JavaScript の実行によるインタラクティブな UI はほとんど不要なので
       - サーバーファースト
       - 定期的(一日一回)ビルドし直してコンテンツを生成する
         - 参考: [定期的に自動ビルドする](https://zenn.dev/catnose99/articles/cb72a73368a547756862#%E5%AE%9A%E6%9C%9F%E7%9A%84%E3%81%AB%E8%87%AA%E5%8B%95%E3%83%93%E3%83%AB%E3%83%89%E3%81%99%E3%82%8B)
     - 高速・高パフォーマンス
-    - 自由なUI
+    - 自由な UI
       - React、Preact、Svelte、Vue、Solid、Lit、HTMX、ウェブコンポーネントなどをサポートしているので、特定のライブラリにロックされない
       - アイランドアーキテクチャにより、コンポーネントごとに柔軟にライブラリを選定可能
-    - Cloudflare Workersとの連携にも対応している
+    - Cloudflare Workers との連携にも対応している
       - 参考: https://developers.cloudflare.com/workers/frameworks/framework-guides/astro/
       - より高速な動作が可能に
 - インフラ
@@ -89,7 +89,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 - アクセス解析ツール
   - Cloudflare Web Analytics
 - パッケージ更新管理
-  - Dependabot 
+  - Dependabot
 
 ## システムアーキテクチャ
 
@@ -99,14 +99,14 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 
 - [個人開発における開発プロセスを公開してみる](https://qiita.com/himatani/items/3b8301da2e889e962e5e)
 - [【個人開発・ポートフォリオに】無料で簡単にいい感じのデザインにできるサービスまとめ](https://qiita.com/aiandrox/items/4196c8f5b564d29fdce7)
-- [[Astro×Hono×Fresh対談] Next.jsじゃないFWが見据えるフロントエンドの未来 #フロントエンドの未来](https://offers.jp/media/event-report/a_4875)
+- [[Astro×Hono×Fresh 対談] Next.js じゃない FW が見据えるフロントエンドの未来 #フロントエンドの未来](https://offers.jp/media/event-report/a_4875)
 - [Web サービスを無料で手軽にモダンなインフラにデプロイしよう！](https://zenn.dev/lovegraph/articles/56f8d5f28ba1c3)
 - [しずかなインターネットの技術構成](https://zenn.dev/catnose99/articles/f8a90a1616dfb3)
-- [Next.jsアプリをVercelからGoogle Cloudに移行した話](https://zenn.dev/team_zenn/articles/5e9547a5c207e3)
-- [チーム個々人のテックブログをRSSで集約するサイトを作った（Next.js）](https://zenn.dev/catnose99/articles/cb72a73368a547756862)
-- [Zennを支える技術とサービス構成](https://zenn.dev/catnose99/articles/zenn-dev-stack)
+- [Next.js アプリを Vercel から Google Cloud に移行した話](https://zenn.dev/team_zenn/articles/5e9547a5c207e3)
+- [チーム個々人のテックブログを RSS で集約するサイトを作った（Next.js）](https://zenn.dev/catnose99/articles/cb72a73368a547756862)
+- [Zenn を支える技術とサービス構成](https://zenn.dev/catnose99/articles/zenn-dev-stack)
 - [Astro Cloudflare Pages](https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/)
-- [AstroサイトをCloudflare Pagesにデプロイする](https://docs.astro.build/ja/guides/deploy/cloudflare/)
-- [Cloudflare Pagesで動作するAstro製ブログのランタイムをbunに移行した話](https://qiita.com/Yu_yukk_Y/items/0678fb8e04a093493502)
-- [AstroでBunを使う](https://docs.astro.build/ja/recipes/bun/)
+- [Astro サイトを Cloudflare Pages にデプロイする](https://docs.astro.build/ja/guides/deploy/cloudflare/)
+- [Cloudflare Pages で動作する Astro 製ブログのランタイムを bun に移行した話](https://qiita.com/Yu_yukk_Y/items/0678fb8e04a093493502)
+- [Astro で Bun を使う](https://docs.astro.build/ja/recipes/bun/)
 - [Build an app with Astro and Bun](https://bun.sh/guides/ecosystem/astro)
