@@ -9,7 +9,7 @@
 asdf plugin add nodejs
 # Node.jsのバージョンを確認
 asdf list all nodejs
-# 特定のNode.jsをインストール
+# 特定のバージョンのNode.jsをインストール
 asdf install nodejs 20.18.0
 # 現在のディレクトリで使用するNode.jsのバージョンを指定
 asdf local nodejs 20.18.0
@@ -21,7 +21,7 @@ asdf install
 2. astro のインストール
 
 ```shell
-bunx create-astro@4.10.0 .
+npm create astro@4.10.0 .
 ```
 
 ## イメージ図
