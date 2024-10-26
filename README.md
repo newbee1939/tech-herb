@@ -2,17 +2,17 @@
 
 ## setup
 
-1. asdf で Bun をインストール
+1. asdf で Node.js をインストール
 
 ```shell
-# Bunのプラグインを追加
-asdf plugin add bun
-# Bunのバージョンを確認
-asdf list all bun
-# 特定のBunをインストール
-asdf install bun 1.1.33
-# 現在のディレクトリで使用するBunのバージョンを指定
-asdf local bun 1.1.33
+# Node.jsのプラグインを追加
+asdf plugin add nodejs
+# Node.jsのバージョンを確認
+asdf list all nodejs
+# 特定のNode.jsをインストール
+asdf install nodejs 20.18.0
+# 現在のディレクトリで使用するNode.jsのバージョンを指定
+asdf local nodejs 20.18.0
 
 # 既に.tool-versionsが存在する場合は以下のコマンドを実行する
 asdf install
@@ -82,7 +82,9 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 - パッケージ管理
   - asdf
 - ランタイム
-  - Bun:v1.1.33
+  - Node.js:v20.18.0
+- パッケージマネージャ
+  - npm:v
 - フレームワーク
   - Astro:v4.10.0
     - 今回の要件として、静的サイトジェネレータ(SSG)で十分
