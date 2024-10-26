@@ -86,6 +86,8 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - VSCode
 - アクセス解析ツール
   - Cloudflare Web Analytics
+- パッケージ更新管理
+  - Dependabot 
 
 ## システムアーキテクチャ
 
