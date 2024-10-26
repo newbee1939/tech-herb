@@ -18,6 +18,12 @@ asdf local bun 1.1.33
 asdf install
 ```
 
+2. astro のインストール
+
+```shell
+bunx create-astro@4.10.0 .
+```
+
 ## イメージ図
 
 https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-type=canvas&t=5EaYmCT2W2UTurp4-0
@@ -78,7 +84,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 - ランタイム
   - Bun:v1.1.33
 - フレームワーク
-  - Astro
+  - Astro:v4.10.0
     - 今回の要件として、静的サイトジェネレータ(SSG)で十分
       - ゼロ JS
         - JavaScript のオーバーヘッドと複雑さを低減
