@@ -145,3 +145,4 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 - [Astro で Bun を使う](https://docs.astro.build/ja/recipes/bun/)
 - [Build an app with Astro and Bun](https://bun.sh/guides/ecosystem/astro)
 - [Partial support for Astro, Svelte and Vue files](https://biomejs.dev/blog/biome-v1-6/)
+- [REST-APIを利用したSSG](https://zenn.dev/thirosue/books/6fa991650c5767/viewer/1c002e)
