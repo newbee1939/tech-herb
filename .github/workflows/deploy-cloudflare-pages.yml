@@ -1,0 +1,24 @@
+name: Deploy To Cloudflare Pages
+
+# on:
+#   schedule:
+#     - cron: "0 5 * * *" # 毎日5時に実行
+#   push:
+#     branches:
+#       - 'main'
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    name: Deploy To Cloudflare Pages
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
