@@ -1,3 +1,11 @@
 {
-  "cSpell.words": ["astrojs", "bunx", "Hono", "HTMX", "Preact", "Publickey"]
+  "cSpell.words": ["astrojs", "bunx", "Hono", "HTMX", "Preact", "Publickey"],
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "quickfix.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
+  },
+  "extensions.ignoreRecommendations": false,
+  "typescript.preferences.importModuleSpecifier": "non-relative"
 }

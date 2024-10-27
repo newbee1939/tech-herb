@@ -1,0 +1,32 @@
+{
+    "$schema": "https://biomejs.dev/schemas/1.7.3/schema.json",
+    "organizeImports": {
+      "enabled": true
+    },
+    "linter": {
+      "enabled": true,
+      "rules": {
+        "recommended": true,
+        "style": {
+          "useImportType": "off"
+        },
+        "correctness": {
+          "noUnusedImports": "error"
+        },
+        "complexity": {
+          "recommended": true
+        }
+      }
+    },
+    "formatter": {
+      "indentStyle": "space"
+    },
+    "javascript": {
+      "parser": {
+        "unsafeParameterDecoratorsEnabled": true
+      },
+      "formatter": {
+        "quoteStyle": "single"
+      }
+    }
+}
