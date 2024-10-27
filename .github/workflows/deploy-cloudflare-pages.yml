@@ -18,13 +18,9 @@ jobs:
     name: Deploy To Cloudflare Pages
     steps:
       - uses: actions/checkout@v4
-      - name: debug
-        run: echo $GITHUB_WORKSPACE
-      - name: debug2
-        run: pwd
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy /tech-herb/dist --project-name=tech-herb
+          command: pages deploy $GITHUB_WORKSPACE/dist --project-name=tech-herb
