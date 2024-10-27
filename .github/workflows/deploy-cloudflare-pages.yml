@@ -18,6 +18,10 @@ jobs:
     name: Deploy To Cloudflare Pages
     steps:
       - uses: actions/checkout@v4
+      - name: tetst
+        run:  echo ${{ github.workspace }}/dist
+      - nae: ss
+        run: echo ${{ github.workspace }}
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
