@@ -24,6 +24,12 @@ asdf install
 npm create astro@4.10.0 .
 ```
 
+3. Biome
+
+```shell
+npm install --save-dev --save-exact @biomejs/biome
+```
+
 ## イメージ図
 
 https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-type=canvas&t=5EaYmCT2W2UTurp4-0
