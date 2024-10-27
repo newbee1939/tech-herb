@@ -18,6 +18,10 @@ jobs:
     name: Deploy To Cloudflare Pages
     steps:
       - uses: actions/checkout@v4
+      - name: debug
+        run: ls
+      - name: debug2
+        run: pwd
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
