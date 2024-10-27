@@ -25,6 +25,7 @@
     "parser": {
       "unsafeParameterDecoratorsEnabled": true
     },
+    "globals": ["Astro"],
     "formatter": {
       "quoteStyle": "single"
     }
