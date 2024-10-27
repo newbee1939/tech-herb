@@ -23,4 +23,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy $GITHUB_WORKSPACE/dist --project-name=tech-herb
+          command: pages deploy ${{ github.workspace }}/dist --project-name=tech-herb
