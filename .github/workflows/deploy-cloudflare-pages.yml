@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: tetst
         run:  echo ${{ github.workspace }}/dist
-      - nae: ss
+      - name: ss
         run: echo ${{ github.workspace }}
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
