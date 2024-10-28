@@ -71,6 +71,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
       - たまに投稿されたらトップに分かりやすく表示
       - 差分更新
         - 必要なものだけ表示する
+      - hoverしたら記事の3行要約が出るように
     - 人気記事
     - タイトルクリックしたらメディア一覧へ
   - 技術動画
