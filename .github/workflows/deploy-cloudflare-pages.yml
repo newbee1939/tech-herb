@@ -19,12 +19,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: tetst
-        run:  echo ${{ github.workspace }}/dist
-      - name: ss
-        run: echo ${{ github.workspace }}
+        run: pwd
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy ${{ github.workspace }}/dist --project-name=tech-herb
+          command: pages deploy /home/runner/work/tech-herb/dist --project-name=tech-herb
