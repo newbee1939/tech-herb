@@ -1,5 +1,9 @@
 # Tech Herb🌿
 
+## リンク
+
+https://tech-herb.pages.dev/
+
 ## setup
 
 1. asdf で Node.js をインストール
