@@ -155,3 +155,4 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 - [Partial support for Astro, Svelte and Vue files](https://biomejs.dev/blog/biome-v1-6/)
 - [REST-APIを利用したSSG](https://zenn.dev/thirosue/books/6fa991650c5767/viewer/1c002e)
 - [GitHub ActionsでビルドしてCloudflare Pagesにデプロイする](https://zenn.dev/nwtgck/articles/1fdee0e84e5808)
+- [個人開発マネタイズ大全](https://zenn.dev/nabettu/articles/013f114c7a1b44)
