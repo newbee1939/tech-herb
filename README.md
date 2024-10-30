@@ -74,6 +74,9 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
       - hoverしたら記事の3行要約が出るように
     - 人気記事
     - タイトルクリックしたらメディア一覧へ
+    - 投稿をツイートする機能
+    - ブックマーク機能
+      - 簡単なコメントと共にブックマークできる
   - 技術動画
   - 技術音声
   - GitHub のリリース情報
