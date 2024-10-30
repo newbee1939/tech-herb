@@ -94,7 +94,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 - デザイン
   - Figma
 - パッケージ管理
-  - asdf
+  - [asdf](https://github.com/newbee1939/memo/blob/main/TechMemo/Framework/Astro.md)
 - ランタイム
   - Node.js:v20.18.0
 - パッケージマネージャ
