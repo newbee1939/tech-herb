@@ -1,21 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import TechArticleCard from '../components/TechArticleCard.astro';
 ---
 
 <Layout title="Tech Herb">
 	<main>
 		<div>
 			<ul class="tech-article-card">
-				<Card
+				<!-- ループ回す -->
+				<TechArticleCard
 					href="https://docs.astro.build/"
 					title="Documentation"
 					body="Learn how Astro works and explore the official API docs."
-				/>
-				<Card
-					href="https://astro.build/chat/"
-					title="Community"
-					body="Come say hi to our amazing Discord community. ❤️"
 				/>
 			</ul>
 		</div>
