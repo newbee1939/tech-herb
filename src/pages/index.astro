@@ -6,14 +6,7 @@ import TechArticleCard from '../components/TechArticleCard.astro';
 <Layout title="Tech Herb">
 	<main>
 		<div>
-			<ul class="tech-article-card">
-				<!-- ループ回す -->
-				<TechArticleCard
-					href="https://docs.astro.build/"
-					title="Documentation"
-					body="Learn how Astro works and explore the official API docs."
-				/>
-			</ul>
+			<TechArticleCard />
 		</div>
 	</main>
 </Layout>
@@ -22,15 +15,10 @@ import TechArticleCard from '../components/TechArticleCard.astro';
 	main {
 		margin: auto;
 		padding: 1rem;
+		/* width: 500px; */
 		max-width: calc(100% - 2rem);
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
-	}
-	.tech-article-card {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
 	}
 </style>
