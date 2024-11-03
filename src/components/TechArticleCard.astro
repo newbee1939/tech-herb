@@ -1,20 +1,45 @@
 ---
 const ARTICLE_LIMIT = 10;
 
-// 最新のPublickeyの記事を取得
-const latestPublickeyArticles = (await(await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.publickey1.jp/atom.xml')).json()).items;
-const slicedPublickeyArticles = latestPublickeyArticles.slice(0, ARTICLE_LIMIT);
+type TechArticle = {
+	title: string,
+	link: string,
+}
 
-const techArticleList = [slicedPublickeyArticles];
+// 最新のPublickeyの記事を取得
+type PublicKeyArticle = {
+	title: string,
+	pubDate: string,
+	link: string,
+	guid: string,
+	author: string,
+	thumbnail: string,
+	description: string,
+	content: string,
+	enclosure: {},
+	categories: string[],
+};
+const latestPublickeyArticles = (await(await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.publickey1.jp/atom.xml')).json()).items;
+const slicedPublickeyArticles: TechArticle[] = latestPublickeyArticles.slice(0, ARTICLE_LIMIT).map((article: PublicKeyArticle) => {
+	return {
+		title: article.title,
+		link: article.link,
+	}
+});
+
+const techArticleItems: TechArticle[][] = [slicedPublickeyArticles];
 ---
 
 <!-- 媒体毎にループを回す -->
-<ol class="tech-article-list">
-	<!-- 媒体内の各記事毎にループを回す -->
-	<li class="tech-article-card">
-		<a href="example.com">test</a>
-	</li>
-</ol>
+{techArticleItems.map((items) => (
+	<ol class="tech-article-list">
+	{items.map((item) => (
+		<li class="tech-article-card">
+			<a href={item.link}>{item.title}</a>
+		</li>
+	))}
+	</ol>
+))}
 
 <style>
 	.tech-article-list {
