@@ -33,6 +33,7 @@ const techArticleItems: TechArticle[][] = [slicedPublickeyArticles];
 <!-- 媒体毎にループを回す -->
 {techArticleItems.map((items) => (
 	<ol class="tech-article-list">
+	{/* 媒体内の記事毎にループを回す */}
 	{items.map((item) => (
 		<li class="tech-article-card">
 			<a href={item.link}>{item.title}</a>
@@ -48,6 +49,6 @@ const techArticleItems: TechArticle[][] = [slicedPublickeyArticles];
 		border-radius: 10px;
 	}
 	.tech-article-card {
-		/*  */
+		padding: 7px;
 	}
 </style>
