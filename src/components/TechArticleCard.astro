@@ -166,7 +166,7 @@ const techArticleMedia: TechArticleMedium[] = [
 <!-- 媒体毎にループを回す -->
 {techArticleMedia.map((medium) => (
 	<ol class="tech-article-list">
-		<h4 class="medium-name"><a href={medium.link}>{medium.name}</a></h4>
+		<div class="medium-name"><a href={medium.link}>{medium.name}</a></div>
 	{/* 媒体内の記事毎にループを回す */}
 	{medium.items.map((item) => (
 		<li class="tech-article-card">
@@ -185,6 +185,8 @@ const techArticleMedia: TechArticleMedium[] = [
 	.medium-name {
 		font-weight: bold;
 		padding-top: 5px;
+		padding-bottom: 5px;
+		font-size: 20px;
 	}
 	.tech-article-card {
 		padding-bottom: 2px;
