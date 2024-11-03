@@ -72,8 +72,35 @@ const zennMedium: TechArticleMedium = {
 }
 // ↑Zennのトレンド記事を取得
 
+// ↓最新のQiitaの記事を取得
+type QiitaArticle = {
+	title: string,
+	pubDate: string,
+	link: string,
+	guid: string,
+	author: string,
+	thumbnail: string,
+	description: string,
+	content: string,
+	enclosure: {},
+	categories: string[],
+};
+const latestQiitaArticles = (await(await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://qiita.com/popular-items/feed')).json()).items;
+const slicedQiitaArticles: TechArticle[] = latestQiitaArticles.slice(0, ARTICLE_LIMIT).map((article: QiitaArticle) => {
+	return {
+		title: article.title,
+		link: article.link,
+	}
+});
+const qiitaMedium: TechArticleMedium = {
+	name: "Qiita",
+	link: "https://qiita.com/",
+	items: slicedQiitaArticles,
+}
+// ↑最新のQiitaの記事を取得
+
 // 全ての媒体をまとめて格納
-const techArticleMedia: TechArticleMedium[] = [publickeyMedium, zennMedium];
+const techArticleMedia: TechArticleMedium[] = [publickeyMedium, zennMedium, qiitaMedium];
 ---
 
 <!-- 媒体毎にループを回す -->
@@ -100,6 +127,6 @@ const techArticleMedia: TechArticleMedium[] = [publickeyMedium, zennMedium];
 		padding-top: 5px;
 	}
 	.tech-article-card {
-		padding-bottom: 4px;
+		padding-bottom: 2px;
 	}
 </style>
