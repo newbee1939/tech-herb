@@ -1,12 +1,17 @@
 ---
-const ARTICLE_LIMIT = 10;
+const ARTICLE_LIMIT = 5;
 
 type TechArticle = {
 	title: string,
 	link: string,
 }
+type TechArticleMedium = {
+	name: string,
+	link: string,
+	items: TechArticle[],
+}
 
-// 最新のPublickeyの記事を取得
+// ↓最新のPublickeyの記事を取得
 type PublicKeyArticle = {
 	title: string,
 	pubDate: string,
@@ -26,15 +31,22 @@ const slicedPublickeyArticles: TechArticle[] = latestPublickeyArticles.slice(0, 
 		link: article.link,
 	}
 });
+const publickeyMedium: TechArticleMedium = {
+	name: "Publickey",
+	link: "https://www.publickey1.jp/",
+	items: slicedPublickeyArticles,
+}
+// ↑最新のPublickeyの記事を取得
 
-const techArticleItems: TechArticle[][] = [slicedPublickeyArticles];
+const techArticleMedia: TechArticleMedium[] = [publickeyMedium];
 ---
 
 <!-- 媒体毎にループを回す -->
-{techArticleItems.map((items) => (
+{techArticleMedia.map((medium) => (
 	<ol class="tech-article-list">
+		<h3 class="medium-name"><a href={medium.link}>{medium.name}</a></h3>
 	{/* 媒体内の記事毎にループを回す */}
-	{items.map((item) => (
+	{medium.items.map((item) => (
 		<li class="tech-article-card">
 			<a href={item.link}>{item.title}</a>
 		</li>
@@ -47,6 +59,10 @@ const techArticleItems: TechArticle[][] = [slicedPublickeyArticles];
 		background-color: rgb(216, 224, 231);
 		color: black;
 		border-radius: 10px;
+	}
+	.medium-name {
+		font-weight: bold;
+		padding-top: 5px;
 	}
 	.tech-article-card {
 		padding: 7px;
