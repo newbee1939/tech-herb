@@ -83,7 +83,7 @@ const techArticleMedia: TechArticleMedium[] = [publickeyMedium, zennMedium];
 	{/* 媒体内の記事毎にループを回す */}
 	{medium.items.map((item) => (
 		<li class="tech-article-card">
-			<a href={item.link}>{item.title}</a>
+			<a href={item.link} target="_blank">{item.title}</a>
 		</li>
 	))}
 	</ol>
