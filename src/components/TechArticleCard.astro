@@ -38,7 +38,42 @@ const publickeyMedium: TechArticleMedium = {
 }
 // ↑最新のPublickeyの記事を取得
 
-const techArticleMedia: TechArticleMedium[] = [publickeyMedium];
+// ↓Zennのトレンド記事を取得
+type ZennArticle = {
+	id: number,
+	post_type: string,
+	title: string,
+	slug: string,
+	comments_count: number,
+	liked_count: number,
+	body_letters_count: number,
+	article_type: number,
+	emoji: string,
+	is_suspending_private: boolean,
+	published_at: string,
+	body_updated_at: string,
+	source_repo_updated_at: Date | null,
+	pinned: boolean,
+	path: string,
+	user: {}[],
+	publication: Date | null,
+};
+const trendZennArticles = (await(await fetch('https://zenn.dev/api/articles/')).json()).articles;
+const slicedZennArticles: TechArticle[] = trendZennArticles.slice(0, ARTICLE_LIMIT).map((article: ZennArticle) => {
+	return {
+		title: article.title,
+		link: `https://zenn.dev${article.path}`,
+	}
+});
+const zennMedium: TechArticleMedium = {
+	name: "Zenn",
+	link: "https://www.publickey1.jp/",
+	items: slicedZennArticles,
+}
+// ↑Zennのトレンド記事を取得
+
+// 全ての媒体をまとめて格納
+const techArticleMedia: TechArticleMedium[] = [publickeyMedium, zennMedium];
 ---
 
 <!-- 媒体毎にループを回す -->
@@ -65,6 +100,6 @@ const techArticleMedia: TechArticleMedium[] = [publickeyMedium];
 		padding-top: 5px;
 	}
 	.tech-article-card {
-		padding: 7px;
+		padding-bottom: 4px;
 	}
 </style>
