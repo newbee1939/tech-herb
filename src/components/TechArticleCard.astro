@@ -14,7 +14,7 @@ type TechArticleMedium = {
 // ↓最新のPublickeyの記事を取得
 type PublicKeyArticle = {
 	title: string,
-	pubDate: string,
+	pubDate: Date,
 	link: string,
 	guid: string,
 	author: string,
@@ -75,7 +75,7 @@ const zennMedium: TechArticleMedium = {
 // ↓最新のQiitaの記事を取得
 type QiitaArticle = {
 	title: string,
-	pubDate: string,
+	pubDate: Date,
 	link: string,
 	guid: string,
 	author: string,
@@ -99,8 +99,35 @@ const qiitaMedium: TechArticleMedium = {
 }
 // ↑最新のQiitaの記事を取得
 
+// ↓最新のHattenaの記事を取得
+type HatenArticle = {
+	title: string,
+	pubDate: Date,
+	link: string,
+	guid: string,
+	author: string,
+	thumbnail: string,
+	description: string,
+	content: string,
+	enclosure: {},
+	categories: string[],
+};
+const latestHatenaArticles = (await(await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://b.hatena.ne.jp/hotentry/it.rss')).json()).items;
+const slicedHatenaArticles: TechArticle[] = latestHatenaArticles.slice(0, ARTICLE_LIMIT).map((article: HatenArticle) => {
+	return {
+		title: article.title,
+		link: article.link,
+	}
+});
+const hatenaMedium: TechArticleMedium = {
+	name: "はてな",
+	link: "https://b.hatena.ne.jp/hotentry/it",
+	items: slicedHatenaArticles,
+}
+// ↑最新のHatetnaの記事を取得
+
 // 全ての媒体をまとめて格納
-const techArticleMedia: TechArticleMedium[] = [publickeyMedium, zennMedium, qiitaMedium];
+const techArticleMedia: TechArticleMedium[] = [publickeyMedium, zennMedium, qiitaMedium, hatenaMedium];
 ---
 
 <!-- 媒体毎にループを回す -->
