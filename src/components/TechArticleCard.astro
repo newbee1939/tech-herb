@@ -106,7 +106,7 @@ const techArticleMedia: TechArticleMedium[] = [publickeyMedium, zennMedium, qiit
 <!-- 媒体毎にループを回す -->
 {techArticleMedia.map((medium) => (
 	<ol class="tech-article-list">
-		<h3 class="medium-name"><a href={medium.link}>{medium.name}</a></h3>
+		<h4 class="medium-name"><a href={medium.link}>{medium.name}</a></h4>
 	{/* 媒体内の記事毎にループを回す */}
 	{medium.items.map((item) => (
 		<li class="tech-article-card">
