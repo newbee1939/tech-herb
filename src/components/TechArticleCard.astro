@@ -126,8 +126,41 @@ const hatenaMedium: TechArticleMedium = {
 }
 // ↑最新のHatetnaの記事を取得
 
+// ↓最新のITmediaの記事を取得
+type ItMediaArticle = {
+	title: string,
+	pubDate: Date,
+	link: string,
+	guid: string,
+	author: string,
+	thumbnail: string,
+	description: string,
+	content: string,
+	enclosure: {},
+	categories: string[],
+};
+const latestItMediaArticles = (await(await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://rss.itmedia.co.jp/rss/2.0/topstory.xml')).json()).items;
+const slicedItMediaArticles: TechArticle[] = latestItMediaArticles.slice(0, ARTICLE_LIMIT).map((article: ItMediaArticle) => {
+	return {
+		title: article.title,
+		link: article.link,
+	}
+});
+const itMediaMedium: TechArticleMedium = {
+	name: "ITmedia",
+	link: "https://www.itmedia.co.jp/",
+	items: slicedItMediaArticles,
+}
+// ↑最新のITmediaの記事を取得
+
 // 全ての媒体をまとめて格納
-const techArticleMedia: TechArticleMedium[] = [publickeyMedium, zennMedium, qiitaMedium, hatenaMedium];
+const techArticleMedia: TechArticleMedium[] = [
+	publickeyMedium,
+	zennMedium,
+	qiitaMedium,
+	hatenaMedium,
+	itMediaMedium
+];
 ---
 
 <!-- 媒体毎にループを回す -->
