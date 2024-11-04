@@ -14,38 +14,8 @@ const publickeyMedium = await getPublickeyMedium();
 import { getZennMedium } from './feeds/zenn';
 const zennMedium = await getZennMedium();
 
-
-// ↓最新のQiitaの記事を取得
-type QiitaArticle = {
-	title: string,
-	pubDate: Date,
-	link: string,
-	guid: string,
-	author: string,
-	thumbnail: string,
-	description: string,
-	content: string,
-	enclosure: {},
-	categories: string[],
-};
-let slicedQiitaArticles: TechArticle[] = [];
-try {
-	const latestQiitaArticles = (await(await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://qiita.com/popular-items/feed&api_key=${import.meta.env.RSS_2_JSON_API_KEY}`)).json()).items;
-	slicedQiitaArticles = latestQiitaArticles.slice(0, ARTICLE_LIMIT).map((article: QiitaArticle) => {
-		return {
-			title: article.title,
-			link: article.link,
-		}
-	});
-} catch(e) {
-	slicedQiitaArticles = [];
-}
-const qiitaMedium: TechArticleMedium = {
-	name: "Qiita",
-	link: "https://qiita.com/",
-	items: slicedQiitaArticles,
-}
-// ↑最新のQiitaの記事を取得
+import { getQiitaMedium } from './feeds/qiita';
+const qiitaMedium = await getQiitaMedium();
 
 // ↓最新のHattenaの記事を取得
 type HatenArticle = {
