@@ -27,7 +27,6 @@ export const getPublickeyMedium = async () => {
         console.error(e);
         slicedPublickeyArticles  = [];
     }
-    console.log(slicedPublickeyArticles);
     return {
         name: "Publickey",
         link: "https://www.publickey1.jp/",
