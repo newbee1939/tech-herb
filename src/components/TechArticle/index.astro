@@ -11,37 +11,8 @@ type TechArticleMedium = {
 	items: TechArticle[],
 }
 
-// ↓最新のPublickeyの記事を取得
-type PublicKeyArticle = {
-	title: string,
-	pubDate: Date,
-	link: string,
-	guid: string,
-	author: string,
-	thumbnail: string,
-	description: string,
-	content: string,
-	enclosure: {},
-	categories: string[],
-};
-let slicedPublickeyArticles: TechArticle[] = [];
-try {
-	const latestPublickeyArticles = (await(await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://www.publickey1.jp/atom.xml&api_key=${import.meta.env.RSS_2_JSON_API_KEY}`)).json()).items;
-	slicedPublickeyArticles = latestPublickeyArticles.slice(0, ARTICLE_LIMIT).map((article: PublicKeyArticle) => {
-		return {
-			title: article.title,
-			link: article.link,
-		}
-	});
-} catch(e) {
-	slicedPublickeyArticles  = [];
-}
-const publickeyMedium: TechArticleMedium = {
-	name: "Publickey",
-	link: "https://www.publickey1.jp/",
-	items: slicedPublickeyArticles,
-}
-// ↑最新のPublickeyの記事を取得
+import { getPublickey } from './feeds/publickey';
+const publickeyMedium = await getPublickey();
 
 // ↓Zennのトレンド記事を取得
 type ZennArticle = {
