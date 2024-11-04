@@ -63,13 +63,18 @@ type ZennArticle = {
 	user: {}[],
 	publication: Date | null,
 };
-const trendZennArticles = (await(await fetch('https://zenn.dev/api/articles/')).json()).articles;
-const slicedZennArticles: TechArticle[] = trendZennArticles.slice(0, ARTICLE_LIMIT).map((article: ZennArticle) => {
-	return {
-		title: article.title,
-		link: `https://zenn.dev${article.path}`,
-	}
-});
+let slicedZennArticles: TechArticle[] = [];
+try {
+	const trendZennArticles = (await(await fetch('https://zenn.dev/api/articles/')).json()).articles;
+	slicedZennArticles = trendZennArticles.slice(0, ARTICLE_LIMIT).map((article: ZennArticle) => {
+		return {
+			title: article.title,
+			link: `https://zenn.dev${article.path}`,
+		}
+	});
+} catch(e) {
+	slicedZennArticles = [];
+}
 const zennMedium: TechArticleMedium = {
 	name: "Zenn",
 	link: "https://www.publickey1.jp/",
@@ -90,13 +95,18 @@ type QiitaArticle = {
 	enclosure: {},
 	categories: string[],
 };
-const latestQiitaArticles = (await(await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://qiita.com/popular-items/feed&api_key=${import.meta.env.RSS_2_JSON_API_KEY}`)).json()).items;
-const slicedQiitaArticles: TechArticle[] = latestQiitaArticles.slice(0, ARTICLE_LIMIT).map((article: QiitaArticle) => {
-	return {
-		title: article.title,
-		link: article.link,
-	}
-});
+let slicedQiitaArticles: TechArticle[] = [];
+try {
+	const latestQiitaArticles = (await(await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://qiita.com/popular-items/feed&api_key=${import.meta.env.RSS_2_JSON_API_KEY}`)).json()).items;
+	slicedQiitaArticles = latestQiitaArticles.slice(0, ARTICLE_LIMIT).map((article: QiitaArticle) => {
+		return {
+			title: article.title,
+			link: article.link,
+		}
+	});
+} catch(e) {
+	slicedQiitaArticles = [];
+}
 const qiitaMedium: TechArticleMedium = {
 	name: "Qiita",
 	link: "https://qiita.com/",
@@ -117,13 +127,18 @@ type HatenArticle = {
 	enclosure: {},
 	categories: string[],
 };
-const latestHatenaArticles = (await(await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://b.hatena.ne.jp/hotentry/it.rss&api_key=${import.meta.env.RSS_2_JSON_API_KEY}`)).json()).items;
-const slicedHatenaArticles: TechArticle[] = latestHatenaArticles.slice(0, ARTICLE_LIMIT).map((article: HatenArticle) => {
-	return {
-		title: article.title,
-		link: article.link,
-	}
-});
+let slicedHatenaArticles: TechArticle[] = [];
+try {
+	const latestHatenaArticles = (await(await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://b.hatena.ne.jp/hotentry/it.rss&api_key=${import.meta.env.RSS_2_JSON_API_KEY}`)).json()).items;
+	slicedHatenaArticles = latestHatenaArticles.slice(0, ARTICLE_LIMIT).map((article: HatenArticle) => {
+		return {
+			title: article.title,
+			link: article.link,
+		}
+	});
+} catch(e) {
+	slicedHatenaArticles = [];
+}
 const hatenaMedium: TechArticleMedium = {
 	name: "はてな",
 	link: "https://b.hatena.ne.jp/hotentry/it",
@@ -144,13 +159,18 @@ type ItMediaArticle = {
 	enclosure: {},
 	categories: string[],
 };
-const latestItMediaArticles = (await(await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://rss.itmedia.co.jp/rss/2.0/topstory.xml&api_key=${import.meta.env.RSS_2_JSON_API_KEY}`)).json()).items;
-const slicedItMediaArticles: TechArticle[] = latestItMediaArticles.slice(0, ARTICLE_LIMIT).map((article: ItMediaArticle) => {
-	return {
-		title: article.title,
-		link: article.link,
-	}
-});
+let slicedItMediaArticles: TechArticle[] = [];
+try {
+	const latestItMediaArticles = (await(await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://rss.itmedia.co.jp/rss/2.0/topstory.xml&api_key=${import.meta.env.RSS_2_JSON_API_KEY}`)).json()).items;
+	slicedItMediaArticles = latestItMediaArticles.slice(0, ARTICLE_LIMIT).map((article: ItMediaArticle) => {
+		return {
+			title: article.title,
+			link: article.link,
+		}
+	});
+} catch(e) {
+	slicedItMediaArticles = [];
+}
 const itMediaMedium: TechArticleMedium = {
 	name: "ITmedia",
 	link: "https://www.itmedia.co.jp/",
