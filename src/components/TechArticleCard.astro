@@ -24,13 +24,18 @@ type PublicKeyArticle = {
 	enclosure: {},
 	categories: string[],
 };
-const latestPublickeyArticles = (await(await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.publickey1.jp/atom.xml')).json()).items;
-const slicedPublickeyArticles: TechArticle[] = latestPublickeyArticles.slice(0, ARTICLE_LIMIT).map((article: PublicKeyArticle) => {
-	return {
-		title: article.title,
-		link: article.link,
-	}
-});
+let slicedPublickeyArticles: TechArticle[] = [];
+try {
+	const latestPublickeyArticles = (await(await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.publickey1.jp/atom.xml')).json()).items;
+	slicedPublickeyArticles = latestPublickeyArticles.slice(0, ARTICLE_LIMIT).map((article: PublicKeyArticle) => {
+		return {
+			title: article.title,
+			link: article.link,
+		}
+	});
+} catch(e) {
+	slicedPublickeyArticles  = [];
+}
 const publickeyMedium: TechArticleMedium = {
 	name: "Publickey",
 	link: "https://www.publickey1.jp/",
