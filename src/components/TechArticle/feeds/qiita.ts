@@ -25,6 +25,7 @@ export const getQiitaMedium = async () => {
             }
         });
     } catch(e) {
+        console.error(e);
         slicedQiitaArticles = [];
     }
     return {
