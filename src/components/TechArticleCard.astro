@@ -191,7 +191,7 @@ const techArticleMedia: TechArticleMedium[] = [
 <!-- 媒体毎にループを回す -->
 {techArticleMedia.map((medium) => (
 	<ol class="tech-article-list">
-		<div class="medium-name"><a href={medium.link}>{medium.name}</a></div>
+		<div class="medium-name"><a href={medium.link} target="_blank">{medium.name}</a></div>
 	{/* 媒体内の記事毎にループを回す */}
 	{medium.items.map((item) => (
 		<li class="tech-article-card">
