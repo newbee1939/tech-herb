@@ -17,37 +17,8 @@ const zennMedium = await getZennMedium();
 import { getQiitaMedium } from './feeds/qiita';
 const qiitaMedium = await getQiitaMedium();
 
-// ↓最新のHattenaの記事を取得
-type HatenArticle = {
-	title: string,
-	pubDate: Date,
-	link: string,
-	guid: string,
-	author: string,
-	thumbnail: string,
-	description: string,
-	content: string,
-	enclosure: {},
-	categories: string[],
-};
-let slicedHatenaArticles: TechArticle[] = [];
-try {
-	const latestHatenaArticles = (await(await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://b.hatena.ne.jp/hotentry/it.rss&api_key=${import.meta.env.RSS_2_JSON_API_KEY}`)).json()).items;
-	slicedHatenaArticles = latestHatenaArticles.slice(0, ARTICLE_LIMIT).map((article: HatenArticle) => {
-		return {
-			title: article.title,
-			link: article.link,
-		}
-	});
-} catch(e) {
-	slicedHatenaArticles = [];
-}
-const hatenaMedium: TechArticleMedium = {
-	name: "はてな",
-	link: "https://b.hatena.ne.jp/hotentry/it",
-	items: slicedHatenaArticles,
-}
-// ↑最新のHatetnaの記事を取得
+import { getHatenaMedium } from './feeds/hatena';
+const hatenaMedium = await getHatenaMedium();
 
 // ↓最新のITmediaの記事を取得
 type ItMediaArticle = {
