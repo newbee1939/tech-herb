@@ -26,7 +26,7 @@ type PublicKeyArticle = {
 };
 let slicedPublickeyArticles: TechArticle[] = [];
 try {
-	const latestPublickeyArticles = (await(await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.publickey1.jp/atom.xml')).json()).items;
+	const latestPublickeyArticles = (await(await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://www.publickey1.jp/atom.xml&api_key=${import.meta.env.RSS_2_JSON_API_KEY}`)).json()).items;
 	slicedPublickeyArticles = latestPublickeyArticles.slice(0, ARTICLE_LIMIT).map((article: PublicKeyArticle) => {
 		return {
 			title: article.title,
@@ -90,7 +90,7 @@ type QiitaArticle = {
 	enclosure: {},
 	categories: string[],
 };
-const latestQiitaArticles = (await(await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://qiita.com/popular-items/feed')).json()).items;
+const latestQiitaArticles = (await(await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://qiita.com/popular-items/feed&api_key=${import.meta.env.RSS_2_JSON_API_KEY}`)).json()).items;
 const slicedQiitaArticles: TechArticle[] = latestQiitaArticles.slice(0, ARTICLE_LIMIT).map((article: QiitaArticle) => {
 	return {
 		title: article.title,
@@ -117,7 +117,7 @@ type HatenArticle = {
 	enclosure: {},
 	categories: string[],
 };
-const latestHatenaArticles = (await(await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://b.hatena.ne.jp/hotentry/it.rss')).json()).items;
+const latestHatenaArticles = (await(await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://b.hatena.ne.jp/hotentry/it.rss&api_key=${import.meta.env.RSS_2_JSON_API_KEY}`)).json()).items;
 const slicedHatenaArticles: TechArticle[] = latestHatenaArticles.slice(0, ARTICLE_LIMIT).map((article: HatenArticle) => {
 	return {
 		title: article.title,
@@ -144,7 +144,7 @@ type ItMediaArticle = {
 	enclosure: {},
 	categories: string[],
 };
-const latestItMediaArticles = (await(await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://rss.itmedia.co.jp/rss/2.0/topstory.xml')).json()).items;
+const latestItMediaArticles = (await(await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://rss.itmedia.co.jp/rss/2.0/topstory.xml&api_key=${import.meta.env.RSS_2_JSON_API_KEY}`)).json()).items;
 const slicedItMediaArticles: TechArticle[] = latestItMediaArticles.slice(0, ARTICLE_LIMIT).map((article: ItMediaArticle) => {
 	return {
 		title: article.title,
