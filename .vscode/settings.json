@@ -1,5 +1,13 @@
 {
-  "cSpell.words": ["astrojs", "bunx", "Hono", "HTMX", "Preact", "Publickey"],
+  "cSpell.words": [
+    "astrojs",
+    "bunx",
+    "Hono",
+    "HTMX",
+    "Preact",
+    "Publickey",
+    "tsconfigs"
+  ],
   "editor.defaultFormatter": "biomejs.biome",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
