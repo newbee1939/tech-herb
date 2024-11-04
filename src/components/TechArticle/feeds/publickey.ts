@@ -13,7 +13,7 @@ type PublicKeyArticle = {
 	categories: string[],
 };
 
-export const getPublickey = async () => {
+export const getPublickeyMedium = async () => {
     let slicedPublickeyArticles: TechArticle[] = [];
     try {
         const latestPublickeyArticles = (await(await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://www.publickey1.jp/atom.xml&api_key=${import.meta.env.RSS_2_JSON_API_KEY}`)).json()).items;

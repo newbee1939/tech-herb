@@ -11,8 +11,8 @@ type TechArticleMedium = {
 	items: TechArticle[],
 }
 
-import { getPublickey } from './feeds/publickey';
-const publickeyMedium = await getPublickey();
+import { getPublickeyMedium } from './feeds/publickey';
+const publickeyMedium = await getPublickeyMedium();
 
 // ↓Zennのトレンド記事を取得
 type ZennArticle = {
