@@ -1,5 +1,8 @@
 # Tech Herb🌿
 
+テクぺディア？
+TechPedia
+
 ## リンク
 
 https://tech-herb.pages.dev/
