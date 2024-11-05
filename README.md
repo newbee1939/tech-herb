@@ -89,6 +89,9 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
     - Zenn の feed など？
   - 新刊情報
     - https://www.amazon.co.jp/gp/bestsellers/english-books/2635017051
+- 作成したい機能
+  - 404ページなど
+  - 上に戻るボタン
 
 ## 使用技術
 
