@@ -92,6 +92,8 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 - 作成したい機能
   - 404ページなど
   - 上に戻るボタン
+  - Biomeコマンドをpackage.jsonに追加
+    - コマンド実行してフォーマットも直す
 
 ## 使用技術
 
