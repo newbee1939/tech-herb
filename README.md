@@ -147,6 +147,8 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - Cloudflare Web Analytics
 - パッケージ更新管理
   - Dependabot
+- その他
+  - Husky
 
 ## システムアーキテクチャ
 
