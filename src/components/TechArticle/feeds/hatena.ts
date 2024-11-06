@@ -29,7 +29,7 @@ export const getHatenaMedium = async () => {
         slicedHatenaArticles = [];
     }
     return {
-        name: "はてな",
+        name: "はてなブックマーク(テクノロジー)のトレンド記事",
         link: "https://b.hatena.ne.jp/hotentry/it",
         items: slicedHatenaArticles,
     }

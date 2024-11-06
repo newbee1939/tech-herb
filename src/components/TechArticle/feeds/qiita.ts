@@ -29,7 +29,7 @@ export const getQiitaMedium = async () => {
         slicedQiitaArticles = [];
     }
     return {
-        name: "Qiita",
+        name: "Qiitaのトレンド記事",
         link: "https://qiita.com/",
         items: slicedQiitaArticles,
     }

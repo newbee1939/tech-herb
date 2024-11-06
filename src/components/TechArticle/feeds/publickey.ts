@@ -29,7 +29,7 @@ export const getPublickeyMedium = async () => {
         slicedPublickeyArticles  = [];
     }
     return {
-        name: "Publickey",
+        name: "Publickeyの新着記事",
         link: "https://www.publickey1.jp/",
         items: slicedPublickeyArticles,
     };
