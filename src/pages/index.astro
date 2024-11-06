@@ -16,10 +16,24 @@ import TechArticle from '../components/TechArticle/index.astro';
 	main {
 		margin: auto;
 		padding: 1rem;
+		/* デフォルト */
 		max-width: calc(100% - 2rem);
 		color: rgb(245, 239, 239);
 		font-size: 20px;
 		line-height: 1.6;
+	}
+	/* タブレット以上の大きさのデバイス */
+	@media (min-width: 768px) {
+		main {
+			max-width: calc(100% - 4rem);
+		}
+	}
+
+	/* PC以上の大きさのデバイス */
+	@media (min-width: 1024px) {
+		main {
+			max-width: calc(100% - 6rem);
+		}
 	}
 	h2 {
 		font-size: 19px;
