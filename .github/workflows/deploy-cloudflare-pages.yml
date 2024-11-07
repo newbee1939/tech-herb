@@ -16,5 +16,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy ${{ github.workspace }} --project-name=tech-herb
+          secrets: |
+            RSS_2_JSON_API_KEY
         env:
           RSS_2_JSON_API_KEY: ${{ secrets.RSS_2_JSON_API_KEY }}
