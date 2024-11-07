@@ -72,6 +72,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
     - 新着記事
       - Technology Radar など新着がないものは普段は非表示
       - たまに投稿されたらトップに分かりやすく表示
+      - メディア一覧表示機能
       - 差分更新
         - 必要なものだけ表示する
       - プルダウンをクリックしたら記事の3行要約が出るように
