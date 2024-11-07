@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-24.04
     name: Deploy To Cloudflare Pages
     steps:
+      - run: echo ${{ secrets.RSS_2_JSON_API_KEY }}
       - uses: actions/checkout@v4
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
