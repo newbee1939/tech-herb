@@ -102,6 +102,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - 独自ドメインを取得する
   - 検索機能
     - 過去分も含めて
+  - アドセンスで収益化
 - 実装面
   - もっと容易に購読内容の変更が出来るようにしたい
     - RSS取得処理など共通化？
