@@ -12,27 +12,28 @@ const biomeReleaseNotes = await getBiomeReleaseNote();
 const techTools: TechTool[] = [
 	biomeReleaseNotes,
 ];
-const TechToolsWithMultipleReleaseNotes = techTools.filter((techTool) => {
-	return techTool.items.length > 1;
+const techToolsWithMultipleReleaseNotes = techTools.filter((techTool) => {
+	return techTool.items.length > 0;
 })
 
 // TODO: その他リリースノートをどんどん追記
 ---
-
+{ techToolsWithMultipleReleaseNotes.length > 0 &&
 	<h2>リリースノート</h2>
-<!-- ツール毎にループを回す -->
-{TechToolsWithMultipleReleaseNotes.map((tool) => (
-	<ol class="release-note-list">
-		<div class="tool-name"><a href={tool.link} target="_blank">{tool.name}</a></div>
-	{/* ツールのリリースノート毎にループを回す */}
-	{tool.items.map((item) => (
-		<li class="release-note-card">
-			<a href={item.link} target="_blank">{item.title}</a>
-			<p>{item.description}</p>
-		</li>
+	<!-- ツール毎にループを回す -->
+	{techToolsWithMultipleReleaseNotes.map((tool) => (
+		<ol class="release-note-list">
+			<div class="tool-name"><a href={tool.link} target="_blank">{tool.name}</a></div>
+		{/* ツールのリリースノート毎にループを回す */}
+		{tool.items.map((item) => (
+			<li class="release-note-card">
+				<a href={item.link} target="_blank">{item.title}</a>
+				<p>{item.description}</p>
+			</li>
+		))}
+		</ol>
 	))}
-	</ol>
-))}
+}
 
 <style>
 	.release-note-list {
