@@ -21,8 +21,8 @@ export const getBiomeReleaseNote = async () => {
             // TODO: グローバルなutilsに切り出す(Vitestでテストも書く)
             // より分かりやすい実装にしたい
             const today = new Date();
-            const baseDate = today.setDate(today.getDate() - 500);
-            return new Date(releaseNote.pubDate) > new Date(baseDate);
+            const baseDate = new Date(today.setDate(today.getDate() - 5));
+            return new Date(releaseNote.pubDate) > baseDate;
         }).map((releaseNote: BiomeReleaseNote) => {
             return {
                 title: releaseNote.title,

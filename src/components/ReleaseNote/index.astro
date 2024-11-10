@@ -12,12 +12,15 @@ const biomeReleaseNotes = await getBiomeReleaseNote();
 const techTools: TechTool[] = [
 	biomeReleaseNotes,
 ];
-// TODO: リリースノートが一件もないツールは表示させないようにする
-// その他リリースノートをどんどん追記
+const TechToolsWithMultipleReleaseNotes = techTools.filter((techTool) => {
+	return techTool.items.length > 1;
+})
+
+// TODO: その他リリースノートをどんどん追記
 ---
 
 <!-- ツール毎にループを回す -->
-{techTools.map((tool) => (
+{TechToolsWithMultipleReleaseNotes.map((tool) => (
 	<ol class="release-note-list">
 		<div class="tool-name"><a href={tool.link} target="_blank">{tool.name}</a></div>
 	{/* ツールのリリースノート毎にループを回す */}
