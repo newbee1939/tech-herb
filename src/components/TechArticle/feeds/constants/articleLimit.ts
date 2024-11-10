@@ -1,1 +1,1 @@
-export const articleLimit = 5;
+export const articleLimit = 6;
