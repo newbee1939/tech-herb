@@ -18,6 +18,7 @@ export const getPublickeyMedium = async () => {
     let slicedPublickeyArticles: TechArticle[] = [];
     try {
         const latestPublickeyArticles = (await(await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://www.publickey1.jp/atom.xml&api_key=${import.meta.env.RSS_2_JSON_API_KEY}`)).json()).items;
+        // TODO: PR記事は除外する（e.g. ...を統合可能に［PR］）
         slicedPublickeyArticles = latestPublickeyArticles.slice(0, articleLimit).map((article: PublicKeyArticle) => {
             return {
                 title: article.title,
