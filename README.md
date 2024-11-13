@@ -138,6 +138,8 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
       1. GitHub リポジトリと連携する
       2. 利用するフレームワークや環境変数をセットする
       3. デプロイを待つ
+    - キャッシュ等のパフォーマンス最適化
+    - WAF等のセキュリティ設定
 - CI/CD
   - GitHub Actions
   - Action
