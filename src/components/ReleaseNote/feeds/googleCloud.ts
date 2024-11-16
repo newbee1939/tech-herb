@@ -26,6 +26,7 @@ export const getGoogleCloudReleaseNote = async () => {
             return new Date(releaseNote.pubDate) > baseDate;
         }).map(async (releaseNote: GoogleCloudReleaseNote) => {
             // TODO: 切り出して汎用的に使えるようにする
+            // The model is overloadedのエラーになるので、SDK使うの一旦やめる？
             const genAI = new GoogleGenerativeAI(import.meta.env.GEMINI_API_KEY);
             const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
             const prompt = `次のGoogle Cloudのリリースノートの内容の特に重要な部分を日本語で分かりやすく80文字程度で簡潔に要約してください！文体は「ですます調」でお願いします！！: ${releaseNote.description}`
