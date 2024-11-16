@@ -14,7 +14,7 @@ const googleCloudReleaseNotes = await getGoogleCloudReleaseNote();
 
 const techTools: TechTool[] = [
 	biomeReleaseNotes,
-	// googleCloudReleaseNotes,
+	googleCloudReleaseNotes,
 ];
 const techToolsWithMultipleReleaseNotes = techTools.filter((techTool) => {
 	return techTool.releaseNotes.length > 0;

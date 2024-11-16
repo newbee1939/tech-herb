@@ -21,13 +21,17 @@ export const getGoogleCloudReleaseNote = async () => {
             // TODO: グローバルなutilsに切り出す(Vitestでテストも書く)
             // より分かりやすい実装にしたい
             const today = new Date();
-            const baseDate = new Date(today.setDate(today.getDate() - 3));
+            const baseDate = new Date(today.setDate(today.getDate() - 2));
             return new Date(releaseNote.pubDate) > baseDate;
         }).map((releaseNote: GoogleCloudReleaseNote) => {
+            const descriptionSummarizedByAi = releaseNote.description;
             return {
-                title: releaseNote.title,
-                link: releaseNote.link,
-                description: releaseNote.description,
+                releaseDate: releaseNote.pubDate,
+                releaseNoteItems: [{
+                    title: releaseNote.title,
+                    link: releaseNote.link,
+                    description: descriptionSummarizedByAi,
+                }],
             }
         });
     } catch(e) {
@@ -38,6 +42,6 @@ export const getGoogleCloudReleaseNote = async () => {
     return {
         name: "Google Cloud",
         link: "https://cloud.google.com/release-notes",
-        items: mappedGoogleCloudReleaseNotes,
+        releaseNotes: mappedGoogleCloudReleaseNotes,
     };
 }
