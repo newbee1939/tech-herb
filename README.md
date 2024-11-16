@@ -95,9 +95,15 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - 技術イベント・カンファレンス情報
   - 自分の投稿
     - Zenn の feed など？
+  - memoのCollectInformation
+    - 全て含める
+  - Thingsの技術情報
+    - 全て含める
   - 新刊情報
     - https://www.amazon.co.jp/gp/bestsellers/english-books/2635017051
 - 作成したい機能
+  - 管理人のピックアップ記事
+    - 意見と共に
   - 404ページなど
   - 上に戻るボタン
   - Biomeコマンドをpackage.jsonに追加
@@ -118,11 +124,17 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - メインのテック記事以外は別ページとして切り出す
     - テック記事一覧
       - みたいな
+  - 前日の朝5時以降の情報を取る。新着の場合
+    - そうすればmainマージ時に更新しても表示される内容は一定になる
 - 実装面
   - もっと容易に購読内容の変更が出来るようにしたい
     - RSS取得処理など共通化？
     - RSSってレスポンス形式がある程度標準化されている？
     - だいたい同じレスポンス構造な気はする
+    - 管理しやすい設計
+      - 記事調べたり
+      - どうすれば自分自身が保守しやすいか？
+      - 正解はない
 - 確認
   - RSSフォーマット決まっている？
 
