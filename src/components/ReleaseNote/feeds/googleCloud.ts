@@ -28,7 +28,7 @@ export const getGoogleCloudReleaseNote = async () => {
             // TODO: 切り出して汎用的に使えるようにする
             const genAI = new GoogleGenerativeAI(import.meta.env.GEMINI_API_KEY);
             const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
-            const prompt = `次のGoogle Cloudのリリースノートの内容を日本語で分かりやすく簡潔に要約してください: ${releaseNote.description}`
+            const prompt = `次のGoogle Cloudのリリースノートの内容の特に重要な部分を日本語で分かりやすく80文字程度で簡潔に要約してください！文体は「ですます調」でお願いします！！: ${releaseNote.description}`
             const result = await model.generateContent(prompt);
             const response = await result.response;
             const descriptionSummarizedByAi = response.text();
