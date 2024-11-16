@@ -6,10 +6,11 @@ type TechArticleMedium = {
 	items: TechArticle[],
 }
 
+// TODO: メディアが増えたときに対応できるようにしたい
 import { getPublickeyMedium } from './feeds/publickey';
 const publickeyMedium = await getPublickeyMedium();
 
-import { getZennMedium } from './feeds/zenn';
+import { getZennMedium } from './apis/zenn';
 const zennMedium = await getZennMedium();
 
 import { getQiitaMedium } from './feeds/qiita';

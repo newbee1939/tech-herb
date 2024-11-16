@@ -1,4 +1,4 @@
-import { articleLimit } from "./constants/articleLimit";
+import { articleLimit } from "../constants/articleLimit";
 import { type TechArticle } from '../types/techArticle';
 
 type QiitaArticle = {
