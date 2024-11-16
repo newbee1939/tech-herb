@@ -223,3 +223,4 @@ GitHub Actions(CD) -> Cloudflare Pages
 - [REST-APIを利用したSSG](https://zenn.dev/thirosue/books/6fa991650c5767/viewer/1c002e)
 - [GitHub ActionsでビルドしてCloudflare Pagesにデプロイする](https://zenn.dev/nwtgck/articles/1fdee0e84e5808)
 - [個人開発マネタイズ大全](https://zenn.dev/nabettu/articles/013f114c7a1b44)
+- [Error: The model is overloaded](https://discuss.ai.google.dev/t/error-the-model-is-overloaded/48410)
