@@ -195,6 +195,11 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 GitHub Actions(CD) -> Cloudflare Pages
 ```
 
+## 疑問点
+
+- Cloudflare Pagesでdeployが開始されない場合がある
+  - https://dash.cloudflare.com/43e7f1409d1c6c820ee4aab9a7b29eeb/pages/view/tech-herb/5217fa8c-5d8e-483f-a916-9189c1a12def
+
 ## 参考記事
 
 - [個人開発における開発プロセスを公開してみる](https://qiita.com/himatani/items/3b8301da2e889e962e5e)
