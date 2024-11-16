@@ -79,6 +79,8 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
       - 差分更新
         - 必要なものだけ表示する
       - プルダウンをクリックしたら記事の3行要約が出るように
+      - 企業テックブログRSS
+        - https://yamadashy.github.io/tech-blog-rss-feed/
     - 人気記事
     - タイトルクリックしたらメディア一覧へ
     - 投稿をツイートする機能
@@ -188,6 +190,9 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - Dependabot
 - その他
   - Husky
+  - [rss-parser](https://github.com/rbren/rss-parser)
+    - 現在は使っていない
+    - 必要であれば入れる
 
 ## システムアーキテクチャ
 
