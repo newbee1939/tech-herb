@@ -190,10 +190,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - Dependabot
 - その他
   - Husky
-  - [rss-parser](https://github.com/rbren/rss-parser)
-    - 現在は使っていない
-    - 必要であれば入れる
-  - [html-to-json](https://github.com/yousufkalim/html-to-json)
+  - [generative-ai-js](https://github.com/google-gemini/generative-ai-js)
 
 ## システムアーキテクチャ
 

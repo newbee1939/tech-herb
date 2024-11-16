@@ -24,6 +24,7 @@ export const getGoogleCloudReleaseNote = async () => {
             const baseDate = new Date(today.setDate(today.getDate() - 2));
             return new Date(releaseNote.pubDate) > baseDate;
         }).map((releaseNote: GoogleCloudReleaseNote) => {
+            // TODO: AIで要約させる
             const descriptionSummarizedByAi = releaseNote.description;
             return {
                 releaseDate: releaseNote.pubDate,
