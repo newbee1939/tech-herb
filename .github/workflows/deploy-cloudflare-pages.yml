@@ -1,6 +1,7 @@
 name: Deploy To Cloudflare Pages
 
-on: [push]
+on:
+  push:
   schedule:
     - cron: "0 5 * * *" # 毎朝5時に更新
 
