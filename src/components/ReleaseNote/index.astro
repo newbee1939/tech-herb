@@ -3,7 +3,7 @@ import { type ReleaseNote } from './types/releaseNote';
 type TechTool = {
 	name: string,
 	link: string,
-	items: ReleaseNote[],
+	releaseNotes: ReleaseNote[],
 }
 
 import { getBiomeReleaseNote } from './feeds/biome';
@@ -14,10 +14,10 @@ const googleCloudReleaseNotes = await getGoogleCloudReleaseNote();
 
 const techTools: TechTool[] = [
 	biomeReleaseNotes,
-	googleCloudReleaseNotes,
+	// googleCloudReleaseNotes,
 ];
 const techToolsWithMultipleReleaseNotes = techTools.filter((techTool) => {
-	return techTool.items.length > 0;
+	return techTool.releaseNotes.length > 0;
 })
 
 // TODO: その他リリースノートをどんどん追記
@@ -30,10 +30,13 @@ const techToolsWithMultipleReleaseNotes = techTools.filter((techTool) => {
 		<ol class="release-note-list">
 			<div class="tool-name"><a href={tool.link} target="_blank">{tool.name}</a></div>
 		{/* ツールのリリースノート毎にループを回す */}
-		{tool.items.map((item) => (
+		{tool.releaseNotes.map((releaseNote) => (
 			<li class="release-note-card">
-				<a href={item.link} target="_blank">{item.title}</a>
-				<p>{item.description}</p>
+				<p>{releaseNote.releaseDate}</p>
+				{releaseNote.releaseNoteItems.map((releaseNoteItem) => (
+					<a href={releaseNoteItem.link} target="_blank">{releaseNoteItem.title}</a>
+					<p>{releaseNoteItem.description}</p>
+				))}
 			</li>
 		))}
 		</ol>

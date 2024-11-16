@@ -25,9 +25,12 @@ export const getBiomeReleaseNote = async () => {
             return new Date(releaseNote.pubDate) > baseDate;
         }).map((releaseNote: BiomeReleaseNote) => {
             return {
-                title: releaseNote.title,
-                link: releaseNote.link,
-                description: releaseNote.description,
+                releaseDate: releaseNote.pubDate,
+                releaseNoteItems: [{
+                    title: releaseNote.title,
+                    link: releaseNote.link,
+                    description: releaseNote.description,
+                }],
             }
         });
     } catch(e) {
@@ -37,6 +40,6 @@ export const getBiomeReleaseNote = async () => {
     return {
         name: "Biome",
         link: "https://biomejs.dev/blog/",
-        items: mappedBiomeReleaseNotes,
+        releaseNotes: mappedBiomeReleaseNotes,
     };
 }
