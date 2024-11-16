@@ -199,6 +199,7 @@ GitHub Actions(CD) -> Cloudflare Pages
 
 - Cloudflare Pagesでdeployが開始されない場合がある
   - https://dash.cloudflare.com/43e7f1409d1c6c820ee4aab9a7b29eeb/pages/view/tech-herb/5217fa8c-5d8e-483f-a916-9189c1a12def
+  - というより、一回のpushで2回デプロイが走ってる？
 
 ## 参考記事
 
