@@ -193,6 +193,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - [rss-parser](https://github.com/rbren/rss-parser)
     - 現在は使っていない
     - 必要であれば入れる
+  - [html-to-json](https://github.com/yousufkalim/html-to-json)
 
 ## システムアーキテクチャ
 
