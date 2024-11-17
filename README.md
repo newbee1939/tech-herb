@@ -102,7 +102,8 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - Thingsの技術情報
     - 全て含める
   - 新刊情報
-    - https://www.amazon.co.jp/gp/bestsellers/english-books/2635017051
+    - 表示したい内容
+      - https://www.amazon.co.jp/s?i=stripbooks&rh=n%3A466298%2Cp_n_publication_date%3A2285919051&s=date-desc-rank&dc&qid=1731836991&rnid=82836051&ref=sr_st_date-desc-rank&ds=v1%3A%2FLb5BeqyecGzmgQkHG8LLDAxGn5zlrKO5dSFm66q%2FUk
 - 作成したい機能
   - 管理人のピックアップ記事
     - 意見と共に
