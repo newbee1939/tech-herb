@@ -22,12 +22,16 @@ const hatenaMedium = await getHatenaMedium();
 import { getItMediaMedium } from './feeds/itmedia';
 const itMediaMedium = await getItMediaMedium();
 
+import { getGgenMedium } from './feeds/ggen';
+const ggenMedium = await getGgenMedium();
+
 const techArticleMedia: TechArticleMedium[] = [
 	publickeyMedium,
 	zennMedium,
 	qiitaMedium,
 	hatenaMedium,
-	itMediaMedium
+	itMediaMedium,
+	ggenMedium,
 ];
 ---
 
