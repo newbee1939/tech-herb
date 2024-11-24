@@ -101,9 +101,6 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
     - 全て含める
   - Thingsの技術情報
     - 全て含める
-  - 新刊情報
-    - 表示したい内容
-      - https://www.amazon.co.jp/s?i=stripbooks&rh=n%3A466298%2Cp_n_publication_date%3A2285919051&s=date-desc-rank&dc&qid=1731836991&rnid=82836051&ref=sr_st_date-desc-rank&ds=v1%3A%2FLb5BeqyecGzmgQkHG8LLDAxGn5zlrKO5dSFm66q%2FUk
 - 作成したい機能
   -  その他の技術記事
     - TOPページに表示していない技術記事の情報を一覧で表示
@@ -234,3 +231,13 @@ GitHub Actions(CD) -> Cloudflare Pages
 
 - Gemini APIは無料で簡単に使える
 - wrangler-actionは簡単にpreview環境も作成されてとても便利
+- paapiは制約が多い
+  - 最大100件のみしか取得できない
+  - 10ページ目までしか取得できない
+  - 発売日を指定して取得できない
+  - BrowseNodeIdをうまく使うことで対象を絞ることができる
+
+## StudyLater
+
+- コード設計
+- Promise
