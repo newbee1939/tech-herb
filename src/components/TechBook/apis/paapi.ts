@@ -73,7 +73,7 @@ export const getTodayReleasedTechBooks = async () => {
 /**
  * Amazonの新着技術書情報を各BrowseNodeIdの各ページ毎に取得
  *
- * https://www.amazon.co.jp/s?i=stripbooks&rh=n%3A466298%2Cp_n_publication_date%3A2285919051&s=date-desc-rank&dc&qid=1731836991&rnid=82836051&ref=sr_st_date-desc-rank&ds=v1%3A%2FLb5BeqyecGzmgQkHG8LLDAxGn5zlrKO5dSFm66q%2FUk
+ * https://amzn.to/411m43B
  */
 export const getTodayReleasedTechBooksPerPage = (browseNodeId: number, pageNumber: number): Promise<TechBook[]> => {
   const searchItemsRequest = new ProductAdvertisingAPIv1.SearchItemsRequest();
