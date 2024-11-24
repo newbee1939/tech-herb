@@ -1,0 +1,78 @@
+---
+import { type ReleaseNote } from './types/releaseNote';
+type TechTool = {
+	name: string,
+	link: string,
+	releaseNotes: ReleaseNote[],
+}
+
+import { getBiomeReleaseNote } from './feeds/biome';
+const biomeReleaseNotes = await getBiomeReleaseNote();
+
+import { getGoogleCloudReleaseNote } from './feeds/googleCloud';
+const googleCloudReleaseNotes = await getGoogleCloudReleaseNote();
+
+const techTools: TechTool[] = [
+	biomeReleaseNotes,
+	googleCloudReleaseNotes,
+];
+const techToolsWithMultipleReleaseNotes = techTools.filter((techTool) => {
+	return techTool.releaseNotes.length > 0;
+})
+
+// TODO: その他リリースノートをどんどん追記
+// GitHubのリリースノート取得などは共通化できるかも
+---
+{ techToolsWithMultipleReleaseNotes.length > 0 &&
+	<h2>リリースノート</h2>
+	<!-- ツール毎にループを回す -->
+	{techToolsWithMultipleReleaseNotes.map((tool) => (
+		<ol class="release-note-list">
+			<div class="tool-name"><a href={tool.link} target="_blank">{tool.name}</a></div>
+		{/* ツールのリリースノート毎にループを回す */}
+		{tool.releaseNotes.map((releaseNote) => (
+			<li class="release-note-card">
+				<p>{releaseNote.releaseDate}</p>
+				{releaseNote.releaseNoteItems.map((releaseNoteItem) => (
+					<a href={releaseNoteItem.link} target="_blank">{releaseNoteItem.title}</a>
+					<p>{releaseNoteItem.description}</p>
+				))}
+			</li>
+		))}
+		</ol>
+	))}
+}
+
+<style>
+	.release-note-list {
+		background-color: rgb(216, 224, 231);
+		color: black;
+		border-radius: 10px;
+		padding-top: 10px;
+		padding-bottom: 15px;
+		padding-right: 14px;
+	}
+	.tool-name {
+		font-weight: bold;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		font-size: 20px;
+	}
+	.release-note-card {
+		padding-bottom: 2px;
+		font-size: 17px;
+	}
+	.release-note-card p {
+		font-size: 15px;
+		color: rgb(55, 52, 52);
+		margin-top: 2px;
+		margin-bottom: 6px;
+	}
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+	a:hover {
+		color: rgb(102, 102, 234);
+	}
+</style>
