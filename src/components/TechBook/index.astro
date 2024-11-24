@@ -1,48 +1,22 @@
 ---
-// import { type TechArticle } from './types/techArticle';
-// type TechArticleMedium = {
-// 	name: string,
-// 	link: string,
-// 	items: TechArticle[],
-// }
+import { type TechBook } from './types/techBook';
 
-// TODO: メディアが増えたときに対応できるようにしたい
-import { searchTechBookItems } from './apis/paapi';
-// const newTechBooks = await searchTechBookItems();
-const newTechBooks = searchTechBookItems();
-
-console.log("===============================");
-console.log(newTechBooks);
-console.log("===============================");
-
-// const techArticleMedia: TechArticleMedium[] = [
-// 	publickeyMedium,
-// 	zennMedium,
-// 	qiitaMedium,
-// 	hatenaMedium,
-// 	itMediaMedium,
-// 	ggenMedium,
-// ];
-
+import { getTodayReleasedTechBooks } from './apis/paapi';
+const todayReleasedTechBooks: TechBook[] = await getTodayReleasedTechBooks();
 
 ---
 
-<h2>新着技術書</h2>
-<!-- 媒体毎にループを回す -->
-<!-- {techArticleMedia.map((medium) => (
-	<ol class="tech-article-list">
-		<div class="medium-name"><a href={medium.link} target="_blank">{medium.name}</a></div>
-	{/* 媒体内の記事毎にループを回す */}
-	{medium.items.map((item) => (
-		<li class="tech-article-card">
-			<a href={item.link} target="_blank">{item.title}</a>
+<h2>本日発売の技術書一覧</h2>
+<ol class="tech-book-list">
+	{todayReleasedTechBooks.map((book) => (
+		<li class="tech-book-card">
+			<a href={book.link} target="_blank">{book.title}</a>
 		</li>
 	))}
-	</ol>
-))} -->
+</ol>
 
 <style>
-	.tech-article-list {
+	.tech-book-list {
 		background-color: rgb(216, 224, 231);
 		color: black;
 		border-radius: 10px;
@@ -50,13 +24,13 @@ console.log("===============================");
 		padding-bottom: 15px;
 		padding-right: 14px;
 	}
-	.medium-name {
+	.book-name {
 		font-weight: bold;
 		padding-top: 5px;
 		padding-bottom: 5px;
 		font-size: 20px;
 	}
-	.tech-article-card {
+	.tech-book-card {
 		padding-bottom: 2px;
 		font-size: 17px;
 	}
