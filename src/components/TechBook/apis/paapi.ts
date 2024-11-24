@@ -121,12 +121,12 @@ export const getTodayReleasedTechBooksPerPage = (browseNodeId: number, pageNumbe
 
       // TODO: 広告(PR)は除外したい
       const todayReleasedTechBooks = searchItemsResponse['SearchResult']['Items'].filter((item) => {
-        // NOTE: 本日発売の書籍に絞る
-        return isTodayInJapan(item['ItemInfo']['ContentInfo']['PublicationDate']['DisplayValue']);
-      }).map((item) => {
         console.log("================================");
         console.log(item);
         console.log("================================");
+        // NOTE: 本日発売の書籍に絞る
+        return isTodayInJapan(item['ItemInfo']['ContentInfo']['PublicationDate']['DisplayValue']);
+      }).map((item) => {
         return {
           title: item['ItemInfo']['Title'],
           link: item['DetailPageURL'],
