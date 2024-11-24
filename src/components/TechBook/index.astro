@@ -1,0 +1,70 @@
+---
+// import { type TechArticle } from './types/techArticle';
+// type TechArticleMedium = {
+// 	name: string,
+// 	link: string,
+// 	items: TechArticle[],
+// }
+
+// TODO: メディアが増えたときに対応できるようにしたい
+import { searchTechBookItems } from './apis/paapi';
+// const newTechBooks = await searchTechBookItems();
+const newTechBooks = searchTechBookItems();
+
+console.log("===============================");
+console.log(newTechBooks);
+console.log("===============================");
+
+// const techArticleMedia: TechArticleMedium[] = [
+// 	publickeyMedium,
+// 	zennMedium,
+// 	qiitaMedium,
+// 	hatenaMedium,
+// 	itMediaMedium,
+// 	ggenMedium,
+// ];
+
+
+---
+
+<h2>新着技術書</h2>
+<!-- 媒体毎にループを回す -->
+<!-- {techArticleMedia.map((medium) => (
+	<ol class="tech-article-list">
+		<div class="medium-name"><a href={medium.link} target="_blank">{medium.name}</a></div>
+	{/* 媒体内の記事毎にループを回す */}
+	{medium.items.map((item) => (
+		<li class="tech-article-card">
+			<a href={item.link} target="_blank">{item.title}</a>
+		</li>
+	))}
+	</ol>
+))} -->
+
+<style>
+	.tech-article-list {
+		background-color: rgb(216, 224, 231);
+		color: black;
+		border-radius: 10px;
+		padding-top: 10px;
+		padding-bottom: 15px;
+		padding-right: 14px;
+	}
+	.medium-name {
+		font-weight: bold;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		font-size: 20px;
+	}
+	.tech-article-card {
+		padding-bottom: 2px;
+		font-size: 17px;
+	}
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+	a:hover {
+		color: rgb(102, 102, 234);
+	}
+</style>
