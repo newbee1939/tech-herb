@@ -42,22 +42,27 @@ export const getTodayReleasedTechBooks = async () => {
   const todayReleasedTechBooksPromises = browseNodeIds.map(async (browseNodeId) => {
     let pageNumber = 1;
     let todayReleasedTechBooksPerNodeId = [];
-    while (true) {
-      const todayReleasedTechBooksPerPage = await getTodayReleasedTechBooksPerPage(browseNodeId, pageNumber);
+    try {
+      while (true) {
+        const todayReleasedTechBooksPerPage = await getTodayReleasedTechBooksPerPage(browseNodeId, pageNumber);
 
-      // rate limit対策
-      await delay(10000); // 10秒待機
+        // rate limit対策
+        await delay(10000); // 10秒待機
 
-      if (!todayReleasedTechBooksPerPage) {
-        break;
+        if (!todayReleasedTechBooksPerPage) {
+          break;
+        }
+
+        todayReleasedTechBooksPerNodeId.push(...todayReleasedTechBooksPerPage);
+
+        pageNumber++;
       }
 
-      todayReleasedTechBooksPerNodeId.push(...todayReleasedTechBooksPerPage);
-
-      pageNumber++;
+      return todayReleasedTechBooksPerNodeId;
+    } catch (e) {
+      console.error(e);
+      return [];
     }
-
-    return todayReleasedTechBooksPerNodeId;
   });
 
   const todayReleasedTechBooks = (await Promise.all(todayReleasedTechBooksPromises)).flat();
