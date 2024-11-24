@@ -87,21 +87,17 @@ export const getTodayReleasedTechBooksPerPage = (browseNodeId: number, pageNumbe
   searchItemsRequest['SortBy'] = 'NewestArrivals';
   // TODO: 必要な情報に絞る
   searchItemsRequest['Resources'] = [
-    'BrowseNodeInfo.BrowseNodes',
-    'BrowseNodeInfo.BrowseNodes.Ancestor',
-    'BrowseNodeInfo.BrowseNodes.SalesRank',
-    'BrowseNodeInfo.WebsiteSalesRank',
-    'CustomerReviews.Count',
-    'CustomerReviews.StarRating',
-    'Images.Primary.Small',
-    'Images.Primary.Medium',
-    'Images.Primary.Large',
-    'Images.Primary.HighRes',
+    // 'BrowseNodeInfo.BrowseNodes',
+    // 'BrowseNodeInfo.BrowseNodes.Ancestor',
+    // 'BrowseNodeInfo.BrowseNodes.SalesRank',
+    // 'BrowseNodeInfo.WebsiteSalesRank',
+    // 'CustomerReviews.Count',
+    // 'CustomerReviews.StarRating',
     'ItemInfo.Title',
-    'ItemInfo.ByLineInfo',
-    'ItemInfo.ContentInfo',
-    'ItemInfo.ContentRating',
-    'Offers.Listings.Price'
+    // 'ItemInfo.ByLineInfo',
+    // 'ItemInfo.ContentInfo',
+    // 'ItemInfo.ContentRating',
+    // 'Offers.Listings.Price'
   ];
 
   return new Promise((resolve, reject) => {
@@ -128,6 +124,9 @@ export const getTodayReleasedTechBooksPerPage = (browseNodeId: number, pageNumbe
         // NOTE: 本日発売の書籍に絞る
         return isTodayInJapan(item['ItemInfo']['ContentInfo']['PublicationDate']['DisplayValue']);
       }).map((item) => {
+        console.log("================================");
+        console.log(item);
+        console.log("================================");
         return {
           title: item['ItemInfo']['Title'],
           link: item['DetailPageURL'],
