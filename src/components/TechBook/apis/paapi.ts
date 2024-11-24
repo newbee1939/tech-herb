@@ -139,7 +139,9 @@ export const getTodayReleasedTechBooksPerPage = (browseNodeId: number, pageNumbe
   });
 }
 
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+const delay = (ms: number) => {
+return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 function isTodayInJapan(isoDateStr: string) {
   try {
