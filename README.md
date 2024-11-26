@@ -105,6 +105,9 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - 上に戻るボタン
   - Biomeコマンドをpackage.jsonに追加
     - コマンド実行してフォーマットも直す
+  - 管理人のピックアップ記事(意見と共に)
+  - 管理人ブログ
+  - 管理人プロフィール
 
 ## 使用技術
 
