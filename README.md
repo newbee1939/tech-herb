@@ -97,6 +97,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - 新刊情報
     - https://www.amazon.co.jp/gp/bestsellers/english-books/2635017051
 - 作成したい機能
+  - 投稿日が1日前の今以降の記事のみ表示させたら最新記事のみ出すことになる
   - 404ページなど
   - HTMLを要約してPodcastの自動更新
   - Podcastでその日のハイライトを聴けるように
