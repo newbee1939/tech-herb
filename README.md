@@ -98,6 +98,8 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
     - https://www.amazon.co.jp/gp/bestsellers/english-books/2635017051
 - 作成したい機能
   - 404ページなど
+  - HTMLを要約してPodcastの自動更新
+  - Podcastでその日のハイライトを聴けるように
   - 英語の翻訳
     - https://gigazine.net/news/20241108-kagi-translate/?utm_source=x&utm_medium=sns&utm_campaign=x_post&utm_content=20241108-kagi-translate
     - APIある？
