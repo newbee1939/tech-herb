@@ -87,17 +87,17 @@ export const getTodayReleasedTechBooksPerPage = (browseNodeId: number, pageNumbe
   searchItemsRequest['SortBy'] = 'NewestArrivals';
   // TODO: 必要な情報に絞る
   searchItemsRequest['Resources'] = [
-    // 'BrowseNodeInfo.BrowseNodes',
-    // 'BrowseNodeInfo.BrowseNodes.Ancestor',
-    // 'BrowseNodeInfo.BrowseNodes.SalesRank',
-    // 'BrowseNodeInfo.WebsiteSalesRank',
-    // 'CustomerReviews.Count',
-    // 'CustomerReviews.StarRating',
+    'BrowseNodeInfo.BrowseNodes',
+    'BrowseNodeInfo.BrowseNodes.Ancestor',
+    'BrowseNodeInfo.BrowseNodes.SalesRank',
+    'BrowseNodeInfo.WebsiteSalesRank',
+    'CustomerReviews.Count',
+    'CustomerReviews.StarRating',
     'ItemInfo.Title',
-    // 'ItemInfo.ByLineInfo',
-    // 'ItemInfo.ContentInfo',
-    // 'ItemInfo.ContentRating',
-    // 'Offers.Listings.Price'
+    'ItemInfo.ByLineInfo',
+    'ItemInfo.ContentInfo',
+    'ItemInfo.ContentRating',
+    'Offers.Listings.Price'
   ];
 
   return new Promise((resolve, reject) => {
@@ -114,6 +114,9 @@ export const getTodayReleasedTechBooksPerPage = (browseNodeId: number, pageNumbe
       }
 
       const firstItem = searchItemsResponse['SearchResult']['Items'][0];
+      console.log("=======================");
+      console.log(firstItem);
+      console.log("=======================");
       // NOTE: そのページの1つ目の本の発売日が過去の時点で、それ以降のページで今日発売の書籍が取れることはないので処理をストップさせる
       if (isYesterdayInJapan(firstItem['ItemInfo']['ContentInfo']['PublicationDate']['DisplayValue'])) {
         resolve(false);

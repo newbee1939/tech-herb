@@ -5,6 +5,9 @@ TechPedia
 テックオール？(Tech All)
 My Tech All
 Tech Owl
+TechOwl
+→Allとフクロウをかけてる
+→フクロウは360度を見渡せる
 
 ## リンク
 
@@ -107,7 +110,14 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
       - TOPに出しているやつは出さなければいい
   - 管理人のピックアップ記事
     - 意見と共に
+  - 投稿日が1日前の今以降の記事のみ表示させたら最新記事のみ出すことになる
   - 404ページなど
+  - HTMLを要約してPodcastの自動更新
+  - Podcastでその日のハイライトを聴けるように
+  - 英語の翻訳
+    - https://gigazine.net/news/20241108-kagi-translate/?utm_source=x&utm_medium=sns&utm_campaign=x_post&utm_content=20241108-kagi-translate
+    - APIある？
+  - 独自ドメイン
   - 上に戻るボタン
   - Biomeコマンドをpackage.jsonに追加
     - コマンド実行してフォーマットも直す
@@ -140,6 +150,9 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
       - 正解はない
 - 確認
   - RSSフォーマット決まっている？
+  - 管理人のピックアップ記事(意見と共に)
+  - 管理人ブログ
+  - 管理人プロフィール
 
 ## 使用技術
 
@@ -176,6 +189,8 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
       1. GitHub リポジトリと連携する
       2. 利用するフレームワークや環境変数をセットする
       3. デプロイを待つ
+    - キャッシュ等のパフォーマンス最適化
+    - WAF等のセキュリティ設定
 - CI/CD
   - GitHub Actions
   - Action
@@ -193,6 +208,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - Husky
   - [generative-ai-js](https://github.com/google-gemini/generative-ai-js)
   - [paapi](https://webservices.amazon.com/paapi5/documentation/quick-start/using-sdk.html#nodejs)
+  - Vertex AI
 
 ## システムアーキテクチャ
 
