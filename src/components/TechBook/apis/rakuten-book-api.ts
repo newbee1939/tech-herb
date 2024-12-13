@@ -47,9 +47,9 @@ export const getTodayReleasedTechBooks = async (): Promise<TechBook[]> => {
     // 今日の発売の書籍に絞る
     const todayPublishedTechBooks = techBooks.filter((book) => {
       const today = getToday();
-      return book.Item.salesDate.includes(`${today}`);
+      return book.Item.salesDate.includes(`2024年12月17日`);
     }).map((book) => {
-      const { title, link} = book.Item;
+      const { title, itemUrl: link} = book.Item;
       return {
         title,
         link
