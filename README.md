@@ -257,3 +257,6 @@ GitHub Actions(CD) -> Cloudflare Pages
 
 - コード設計
 - Promise
+- RSSリーダーの一般的な作り方
+- 設計の全ての本
+  - 全てのエッセンスを試す場所に
