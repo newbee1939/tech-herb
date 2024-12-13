@@ -1,13 +1,13 @@
 ---
 import { type TechBook } from './types/techBook';
 
-import { getTodayReleasedTechBooks } from './apis/paapi';
+import { getTodayReleasedTechBooks } from './apis/rakuten-book-api';
 const todayReleasedTechBooks: TechBook[] = await getTodayReleasedTechBooks();
 
 ---
 
-<!-- TODO: リンクを貼る。本日の最新本 -->
-<!-- 429エラーの場合と取れた場合で表示内容を変える -->
+<!-- TODO: ない場合は表示しない -->
+
 <h2>本日発売の技術書一覧</h2>
 <ol class="tech-book-list">
 	{todayReleasedTechBooks.map((book) => (
