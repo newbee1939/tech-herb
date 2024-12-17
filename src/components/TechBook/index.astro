@@ -12,7 +12,7 @@ const todayReleasedTechBooks: TechBook[] = await getTodayReleasedTechBooks();
 <ol class="tech-book-list">
 	{todayReleasedTechBooks.map((book) => (
 		<li class="tech-book-card">
-			<a href={book.link} target="_blank">{book.title}</a>
+			<a href={book.itemUrl} target="_blank">{book.title}</a>
 		</li>
 	))}
 </ol>

@@ -1,5 +1,6 @@
-import { DateTime } from 'luxon';
 import { type TechBook } from '../types/techBook';
+
+type BookItem = { Item: TechBook }
 
 const getLastMonth = (date = new Date()) => {
   const lastMonthDate = new Date(date.getFullYear(), date.getMonth() - 1);
@@ -32,7 +33,7 @@ export const getTodayReleasedTechBooks = async (): Promise<TechBook[]> => {
       techBooks.push(...techBooksPerPage);
 
       const lastMonth = getLastMonth();
-      const hasLastMonthPublishedBook = techBooksPerPage.some(book => book.Item.salesDate.includes(`${lastMonth}`));
+      const hasLastMonthPublishedBook = techBooksPerPage.some((book: BookItem) => book.Item.salesDate.includes(`${lastMonth}`));
 
       if (hasLastMonthPublishedBook) {
         break;
@@ -45,19 +46,22 @@ export const getTodayReleasedTechBooks = async (): Promise<TechBook[]> => {
       await sleep(1.2);
     }
     // 今日の発売の書籍に絞る
-    const todayPublishedTechBooks = techBooks.filter((book) => {
+    const todayPublishedTechBooks = techBooks.filter((book: BookItem) => {
       const today = getToday();
-      return book.Item.salesDate.includes(`2024年12月17日`);
-    }).map((book) => {
-      const { title, itemUrl: link} = book.Item;
+      return book.Item.salesDate.includes(today);
+    }).map((book: BookItem) => {
+      const { title, itemUrl, salesDate} = book.Item;
       return {
         title,
-        link
+        itemUrl,
+        salesDate,
       }
     });
 
     return todayPublishedTechBooks;
   } catch (e) {
     console.error(e);
+
+    return [];
   }
 }
