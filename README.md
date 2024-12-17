@@ -260,3 +260,9 @@ GitHub Actions(CD) -> Cloudflare Pages
 - RSSリーダーの一般的な作り方
 - 設計の全ての本
   - 全てのエッセンスを試す場所に
+
+## 設計の本(Tech Herbに取り入れ)
+
+- hoge
+
+## 設計の記事(Tech Herbに取り入れ)
