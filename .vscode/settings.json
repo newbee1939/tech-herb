@@ -2,13 +2,16 @@
   "cSpell.words": [
     "astrojs",
     "bunx",
+    "Ggen",
     "hatena",
     "Hono",
     "HTMX",
+    "paapi",
     "Preact",
     "Publickey",
     "Tmedia",
-    "tsconfigs"
+    "tsconfigs",
+    "webservices"
   ],
   "editor.defaultFormatter": "biomejs.biome",
   "editor.formatOnSave": true,

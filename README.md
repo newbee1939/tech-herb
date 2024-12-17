@@ -2,6 +2,9 @@
 
 テクぺディア？
 TechPedia
+テックオール？(Tech All)
+My Tech All
+Tech Owl
 TechOwl
 →Allとフクロウをかけてる
 →フクロウは360度を見渡せる
@@ -75,9 +78,12 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
     - 新着記事
       - Technology Radar など新着がないものは普段は非表示
       - たまに投稿されたらトップに分かりやすく表示
+      - メディア一覧表示機能
       - 差分更新
         - 必要なものだけ表示する
       - プルダウンをクリックしたら記事の3行要約が出るように
+      - 企業テックブログRSS
+        - https://yamadashy.github.io/tech-blog-rss-feed/
     - 人気記事
     - タイトルクリックしたらメディア一覧へ
     - 投稿をツイートする機能
@@ -94,9 +100,16 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - 技術イベント・カンファレンス情報
   - 自分の投稿
     - Zenn の feed など？
-  - 新刊情報
-    - https://www.amazon.co.jp/gp/bestsellers/english-books/2635017051
+  - memoのCollectInformation
+    - 全て含める
+  - Thingsの技術情報
+    - 全て含める
 - 作成したい機能
+  -  その他の技術記事
+    - TOPページに表示していない技術記事の情報を一覧で表示
+      - TOPに出しているやつは出さなければいい
+  - 管理人のピックアップ記事
+    - 意見と共に
   - 投稿日が1日前の今以降の記事のみ表示させたら最新記事のみ出すことになる
   - 404ページなど
   - HTMLを要約してPodcastの自動更新
@@ -108,6 +121,35 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - 上に戻るボタン
   - Biomeコマンドをpackage.jsonに追加
     - コマンド実行してフォーマットも直す
+  - 独自ドメインを取得する
+  - 検索機能
+    - 過去分も含めて
+  - アドセンスで収益化
+  - ツイートボタン
+    - 別タブで
+  - 過去分をCloudflare D1に保存
+    - バックナンバー
+    - サイトは重くならないように
+    - build時に通信？
+  - トップに戻るボタン
+    - クリックしたら最上部までスライド
+  - アプリ名のところはページトップに戻るボタンにする
+  - メインのテック記事以外は別ページとして切り出す
+    - テック記事一覧
+      - みたいな
+  - 前日の朝5時以降の情報を取る。新着の場合
+    - そうすればmainマージ時に更新しても表示される内容は一定になる
+- 実装面
+  - もっと容易に購読内容の変更が出来るようにしたい
+    - RSS取得処理など共通化？
+    - RSSってレスポンス形式がある程度標準化されている？
+    - だいたい同じレスポンス構造な気はする
+    - 管理しやすい設計
+      - 記事調べたり
+      - どうすれば自分自身が保守しやすいか？
+      - 正解はない
+- 確認
+  - RSSフォーマット決まっている？
   - 管理人のピックアップ記事(意見と共に)
   - 管理人ブログ
   - 管理人プロフィール
@@ -164,6 +206,8 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - Dependabot
 - その他
   - Husky
+  - [generative-ai-js](https://github.com/google-gemini/generative-ai-js)
+  - [paapi](https://webservices.amazon.com/paapi5/documentation/quick-start/using-sdk.html#nodejs)
   - Vertex AI
 
 ## システムアーキテクチャ
@@ -171,6 +215,12 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 ```
 GitHub Actions(CD) -> Cloudflare Pages
 ```
+
+## 疑問点
+
+- Cloudflare Pagesでdeployが開始されない場合がある
+  - https://dash.cloudflare.com/43e7f1409d1c6c820ee4aab9a7b29eeb/pages/view/tech-herb/5217fa8c-5d8e-483f-a916-9189c1a12def
+  - というより、一回のpushで2回デプロイが走ってる？
 
 ## 参考記事
 
@@ -191,3 +241,28 @@ GitHub Actions(CD) -> Cloudflare Pages
 - [REST-APIを利用したSSG](https://zenn.dev/thirosue/books/6fa991650c5767/viewer/1c002e)
 - [GitHub ActionsでビルドしてCloudflare Pagesにデプロイする](https://zenn.dev/nwtgck/articles/1fdee0e84e5808)
 - [個人開発マネタイズ大全](https://zenn.dev/nabettu/articles/013f114c7a1b44)
+- [Error: The model is overloaded](https://discuss.ai.google.dev/t/error-the-model-is-overloaded/48410)
+
+## 学び・気付き
+
+- Gemini APIは無料で簡単に使える
+- wrangler-actionは簡単にpreview環境も作成されてとても便利
+- paapiは制約が多い
+  - 最大100件のみしか取得できない
+  - 10ページ目までしか取得できない
+  - 発売日を指定して取得できない
+  - BrowseNodeIdをうまく使うことで対象を絞ることができる
+
+## StudyLater
+
+- コード設計
+- Promise
+- RSSリーダーの一般的な作り方
+- 設計の全ての本
+  - 全てのエッセンスを試す場所に
+
+## 設計の本(Tech Herbに取り入れ)
+
+- hoge
+
+## 設計の記事(Tech Herbに取り入れ)

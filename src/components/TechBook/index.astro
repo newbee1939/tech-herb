@@ -1,0 +1,46 @@
+---
+import { type TechBook } from './types/techBook';
+
+import { getTodayReleasedTechBooks } from './apis/rakuten-book-api';
+const todayReleasedTechBooks: TechBook[] = await getTodayReleasedTechBooks();
+
+---
+
+<!-- TODO: ない場合は表示しない -->
+
+<h2>本日発売の技術書一覧</h2>
+<ol class="tech-book-list">
+	{todayReleasedTechBooks.map((book) => (
+		<li class="tech-book-card">
+			<a href={book.itemUrl} target="_blank">{book.title}</a>
+		</li>
+	))}
+</ol>
+
+<style>
+	.tech-book-list {
+		background-color: rgb(216, 224, 231);
+		color: black;
+		border-radius: 10px;
+		padding-top: 10px;
+		padding-bottom: 15px;
+		padding-right: 14px;
+	}
+	.book-name {
+		font-weight: bold;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		font-size: 20px;
+	}
+	.tech-book-card {
+		padding-bottom: 2px;
+		font-size: 17px;
+	}
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+	a:hover {
+		color: rgb(102, 102, 234);
+	}
+</style>

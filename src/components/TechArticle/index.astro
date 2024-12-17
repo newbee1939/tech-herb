@@ -6,10 +6,11 @@ type TechArticleMedium = {
 	items: TechArticle[],
 }
 
+// TODO: メディアが増えたときに対応できるようにしたい
 import { getPublickeyMedium } from './feeds/publickey';
 const publickeyMedium = await getPublickeyMedium();
 
-import { getZennMedium } from './feeds/zenn';
+import { getZennMedium } from './apis/zenn';
 const zennMedium = await getZennMedium();
 
 import { getQiitaMedium } from './feeds/qiita';
@@ -21,15 +22,20 @@ const hatenaMedium = await getHatenaMedium();
 import { getItMediaMedium } from './feeds/itmedia';
 const itMediaMedium = await getItMediaMedium();
 
+import { getGgenMedium } from './feeds/ggen';
+const ggenMedium = await getGgenMedium();
+
 const techArticleMedia: TechArticleMedium[] = [
 	publickeyMedium,
 	zennMedium,
 	qiitaMedium,
 	hatenaMedium,
-	itMediaMedium
+	itMediaMedium,
+	ggenMedium,
 ];
 ---
 
+<h2>技術記事</h2>
 <!-- 媒体毎にループを回す -->
 {techArticleMedia.map((medium) => (
 	<ol class="tech-article-list">
