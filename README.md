@@ -200,6 +200,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - Cloudflare Web Analytics
 - パッケージ更新管理
   - Dependabot
+    - 自動更新したい
 - その他
   - Husky
   - [generative-ai-js](https://github.com/google-gemini/generative-ai-js)
