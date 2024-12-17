@@ -17,6 +17,8 @@ type PublicKeyArticle = {
 export const getPublickeyMedium = async () => {
     let slicedPublickeyArticles: TechArticle[] = [];
     try {
+        // TODO: リポジトリに切り出してもいいかも
+        // ロジックのテストがしやすくなる
         const latestPublickeyArticles = (await(await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://www.publickey1.jp/atom.xml&api_key=${import.meta.env.RSS_2_JSON_API_KEY}`)).json()).items;
         slicedPublickeyArticles = latestPublickeyArticles.filter((article: PublicKeyArticle) => {
             // PR用の記事は除外
