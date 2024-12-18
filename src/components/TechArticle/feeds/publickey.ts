@@ -23,7 +23,7 @@ export const getPublickeyMedium = async () => {
         slicedPublickeyArticles = latestPublickeyArticles.filter((article: PublicKeyArticle) => {
             // PR用の記事は除外
             return !article.title.includes("［PR］");
-        }).filter((article: latestPublickeyArticle) => {
+        }).filter((article: PublicKeyArticle) => {
             const now = new Date();
             // 前日の朝5時を計算
             const yesterdayMorning5AM = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1, 5, 0, 0);
