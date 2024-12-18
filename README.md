@@ -260,6 +260,7 @@ GitHub Actions(CD) -> Cloudflare Pages
 
 ## 設計の本(Tech Herbに取り入れ)
 
-- hoge
+- 良いコード/悪いコードで学ぶ設計入門
+  - 進行中
 
 ## 設計の記事(Tech Herbに取り入れ)
