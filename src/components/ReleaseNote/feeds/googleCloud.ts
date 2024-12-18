@@ -31,10 +31,10 @@ export const getGoogleCloudReleaseNote = async () => {
             const { pubDate: releaseDate, title, link } = releaseNote;
 
             return {
-                releaseDate: releaseNote.pubDate,
+                releaseDate,
                 releaseNoteItems: [{
-                    title: releaseNote.title,
-                    link: releaseNote.link,
+                    title,
+                    link,
                     description,
                 }],
             }
