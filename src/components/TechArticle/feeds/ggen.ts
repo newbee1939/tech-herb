@@ -35,6 +35,7 @@ export const getGgenMedium = async () => {
             return {
                 title: article.title,
                 link: article.link,
+                summarizedBody: "",
             }
         });
     } catch(e) {

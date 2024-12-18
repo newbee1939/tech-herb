@@ -22,6 +22,7 @@ export const getQiitaMedium = async () => {
             return {
                 title: article.title,
                 link: article.link,
+                summarizedBody: "",
             }
         });
     } catch(e) {

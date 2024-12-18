@@ -49,6 +49,7 @@ const filteredTechArticleMedia = techArticleMedia.filter((techArticleMedium: Tec
 	{medium.items.map((item) => (
 		<li class="tech-article-card">
 			<a href={item.link} target="_blank">{item.title}</a>
+			<p>{item.summarizedBody}</p>
 		</li>
 	))}
 	</ol>
@@ -72,6 +73,12 @@ const filteredTechArticleMedia = techArticleMedia.filter((techArticleMedium: Tec
 	.tech-article-card {
 		padding-bottom: 2px;
 		font-size: 17px;
+	}
+	.tech-article-card p {
+		font-size: 15px;
+		color: rgb(55, 52, 52);
+		margin-top: 2px;
+		margin-bottom: 6px;
 	}
 	a {
 		text-decoration: none;

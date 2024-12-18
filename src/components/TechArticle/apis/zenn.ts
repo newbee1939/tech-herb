@@ -1,5 +1,6 @@
 import { articleLimit } from "../constants/articleLimit";
 import { type TechArticle } from '../types/techArticle';
+import { answerFromGenerativeAi } from '../../../libs/googleGenerativeAI';
 
 type ZennArticle = {
 	id: number,
@@ -25,12 +26,18 @@ export const getZennMedium = async () => {
     let slicedZennArticles: TechArticle[] = [];
     try {
         const trendZennArticles = (await(await fetch('https://zenn.dev/api/articles/')).json()).articles;
-        slicedZennArticles = trendZennArticles.slice(0, articleLimit).map((article: ZennArticle) => {
+        const slicedZennArticlesPromises = trendZennArticles.slice(0, articleLimit).map(async (article: ZennArticle) => {
+            const bodyHtml = (await(await fetch(`https://zenn.dev/api/articles/${article.slug}`)).json()).article.body_html;
+            const prompt = `次のHTMLで書かれた技術記事を日本語で分かりやすく80文字程度で簡潔に要約してください！文体は「ですます調」でお願いします！！: ${bodyHtml}`;
+            const summarizedBody = await answerFromGenerativeAi(prompt);
+
             return {
                 title: article.title,
                 link: `https://zenn.dev${article.path}`,
+                summarizedBody,
             }
         });
+        slicedZennArticles = await Promise.all(slicedZennArticlesPromises);
     } catch(e) {
         console.error(e);
         slicedZennArticles = [];
