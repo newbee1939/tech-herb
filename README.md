@@ -206,6 +206,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - [generative-ai-js](https://github.com/google-gemini/generative-ai-js)
   - [paapi](https://webservices.amazon.com/paapi5/documentation/quick-start/using-sdk.html#nodejs)
   - Vertex AI
+  - GitHub Copilot
 
 ## システムアーキテクチャ
 
