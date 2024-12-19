@@ -17,14 +17,27 @@ type PublicKeyArticle = {
 export const getPublickeyMedium = async () => {
     let slicedPublickeyArticles: TechArticle[] = [];
     try {
+        // TODO: リポジトリに切り出してもいいかも
+        // ロジックのテストがしやすくなる
         const latestPublickeyArticles = (await(await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://www.publickey1.jp/atom.xml&api_key=${import.meta.env.RSS_2_JSON_API_KEY}`)).json()).items;
         slicedPublickeyArticles = latestPublickeyArticles.filter((article: PublicKeyArticle) => {
             // PR用の記事は除外
             return !article.title.includes("［PR］");
+        }).filter((article: PublicKeyArticle) => {
+            const now = new Date();
+            // 前日の朝5時を計算
+            const yesterdayMorning5AM = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1, 5, 0, 0);
+
+            const articleDate = new Date(article.pubDate);
+
+            // NOTE: 前日の朝5時以降の情報を取得する
+            // そうすればmainマージ時に更新しても表示される内容は一定（前日の朝5時以降に投稿された記事）になる
+            return articleDate >= yesterdayMorning5AM;
         }).slice(0, articleLimit).map((article: PublicKeyArticle) => {
             return {
                 title: article.title,
                 link: article.link,
+                summarizedBody: "",
             }
         });
     } catch(e) {

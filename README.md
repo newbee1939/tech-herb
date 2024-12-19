@@ -76,8 +76,6 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 - 表示したい技術情報
   - 技術記事(様々なサイト)
     - 新着記事
-      - Technology Radar など新着がないものは普段は非表示
-      - たまに投稿されたらトップに分かりやすく表示
       - メディア一覧表示機能
       - 差分更新
         - 必要なものだけ表示する
@@ -137,8 +135,6 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - メインのテック記事以外は別ページとして切り出す
     - テック記事一覧
       - みたいな
-  - 前日の朝5時以降の情報を取る。新着の場合
-    - そうすればmainマージ時に更新しても表示される内容は一定になる
 - 実装面
   - もっと容易に購読内容の変更が出来るようにしたい
     - RSS取得処理など共通化？
@@ -204,11 +200,13 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - Cloudflare Web Analytics
 - パッケージ更新管理
   - Dependabot
+    - 自動更新したい
 - その他
   - Husky
   - [generative-ai-js](https://github.com/google-gemini/generative-ai-js)
   - [paapi](https://webservices.amazon.com/paapi5/documentation/quick-start/using-sdk.html#nodejs)
   - Vertex AI
+  - GitHub Copilot
 
 ## システムアーキテクチャ
 
@@ -263,6 +261,7 @@ GitHub Actions(CD) -> Cloudflare Pages
 
 ## 設計の本(Tech Herbに取り入れ)
 
-- hoge
+- 良いコード/悪いコードで学ぶ設計入門
+  - 進行中
 
 ## 設計の記事(Tech Herbに取り入れ)

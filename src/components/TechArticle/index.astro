@@ -33,17 +33,23 @@ const techArticleMedia: TechArticleMedium[] = [
 	itMediaMedium,
 	ggenMedium,
 ];
+
+// NOTE: 記事数が0の媒体は除外する
+const filteredTechArticleMedia = techArticleMedia.filter((techArticleMedium: TechArticleMedium) => {
+	return techArticleMedium.items.length > 0;
+});
 ---
 
 <h2>技術記事</h2>
 <!-- 媒体毎にループを回す -->
-{techArticleMedia.map((medium) => (
+{filteredTechArticleMedia.map((medium) => (
 	<ol class="tech-article-list">
 		<div class="medium-name"><a href={medium.link} target="_blank">{medium.name}</a></div>
 	{/* 媒体内の記事毎にループを回す */}
 	{medium.items.map((item) => (
 		<li class="tech-article-card">
 			<a href={item.link} target="_blank">{item.title}</a>
+			<p>{item.summarizedBody}</p>
 		</li>
 	))}
 	</ol>
@@ -67,6 +73,12 @@ const techArticleMedia: TechArticleMedium[] = [
 	.tech-article-card {
 		padding-bottom: 2px;
 		font-size: 17px;
+	}
+	.tech-article-card p {
+		font-size: 15px;
+		color: rgb(55, 52, 52);
+		margin-top: 2px;
+		margin-bottom: 6px;
 	}
 	a {
 		text-decoration: none;

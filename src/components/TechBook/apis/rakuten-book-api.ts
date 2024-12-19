@@ -1,4 +1,5 @@
 import { type TechBook } from '../types/techBook';
+import { sleep } from '../../../utils/sleep';
 
 type BookItem = { Item: TechBook }
 
@@ -15,10 +16,6 @@ const getToday = (date = new Date()) => {
   const day = date.getDate();
 
   return `${year}年${month}月${day}日`;
-}
-
-function sleep(second: number) {
-  return new Promise(resolve => setTimeout(resolve, second * 1000));
 }
 
 export const getTodayReleasedTechBooks = async (): Promise<TechBook[]> => {
