@@ -103,6 +103,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - Thingsの技術情報
     - 全て含める
 - 作成したい機能
+  - リンク入力したら要約してくれるページ
   -  その他の技術記事
     - TOPページに表示していない技術記事の情報を一覧で表示
       - TOPに出しているやつは出さなければいい
