@@ -40,7 +40,7 @@ export const getTodayReleasedTechBooks = async (): Promise<TechBook[]> => {
 
       // NOTE: 利用制限(1秒に1回)に対処
       // 参考: https://webservice.faq.rakuten.net/hc/ja/articles/900001974383-%E5%90%84API%E3%81%AE%E5%88%A9%E7%94%A8%E5%88%B6%E9%99%90%E3%82%92%E6%95%99%E3%81%88%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84
-      await sleep(1.2);
+      await sleep(3);
     }
     // 今日の発売の書籍に絞る
     const todayPublishedTechBooks = techBooks.filter((book: BookItem) => {
