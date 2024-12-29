@@ -25,7 +25,7 @@ export const getQiitaMedium = async () => {
             const summarizedBody = await answerFromGenerativeAi(prompt);
 
             // NOTE: Rate Limit対策
-            await sleep(6);
+            await sleep(10);
 
             return {
                 title: article.title,
