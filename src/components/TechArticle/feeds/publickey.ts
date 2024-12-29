@@ -3,6 +3,8 @@ import { answerFromGenerativeAi } from '../../../libs/googleGenerativeAI';
 import { type TechArticle } from '../types/techArticle';
 import { sleep } from '../../../utils/sleep';
 
+const DAYS_BEFORE_TODAY = 1;
+
 type PublicKeyArticle = {
 	title: string,
 	pubDate: Date,
@@ -28,7 +30,7 @@ export const getPublickeyMedium = async () => {
         }).filter((article: PublicKeyArticle) => {
             const now = new Date();
             // 前日の朝5時を計算
-            const yesterdayMorning5AM = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 7, 5, 0, 0);
+            const yesterdayMorning5AM = new Date(now.getFullYear(), now.getMonth(), now.getDate() - DAYS_BEFORE_TODAY, 5, 0, 0);
 
             const articleDate = new Date(article.pubDate);
 
