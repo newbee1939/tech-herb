@@ -2,6 +2,7 @@ import { articleLimit } from "../constants/articleLimit";
 import { type TechArticle } from '../types/techArticle';
 import { answerFromGenerativeAi } from '../../../libs/googleGenerativeAI';
 import { sleep } from '../../../utils/sleep';
+import { geminiSleepSecond } from '../../../constants/geminiSleepSecond';
 
 type ZennArticle = {
 	id: number,
@@ -33,7 +34,7 @@ export const getZennMedium = async () => {
             const summarizedBody = await answerFromGenerativeAi(prompt);
 
             // NOTE: Rate Limit対策
-            await sleep(20);
+            await sleep(geminiSleepSecond);
 
             return {
                 title: article.title,

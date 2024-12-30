@@ -2,6 +2,7 @@ import { articleLimit } from "../constants/articleLimit";
 import { answerFromGenerativeAi } from '../../../libs/googleGenerativeAI';
 import { type TechArticle } from '../types/techArticle';
 import { sleep } from '../../../utils/sleep';
+import { geminiSleepSecond } from '../../../constants/geminiSleepSecond';
 
 const DAYS_BEFORE_TODAY = 1;
 
@@ -45,7 +46,7 @@ export const getPublickeyMedium = async () => {
             const summarizedBody = await answerFromGenerativeAi(prompt);
 
             // NOTE: Rate Limit対策
-            await sleep(20);
+            await sleep(geminiSleepSecond);
 
             return {
                 title: article.title,
