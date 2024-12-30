@@ -4,6 +4,8 @@ import { type TechArticle } from '../types/techArticle';
 import { sleep } from '../../../utils/sleep';
 import { geminiSleepSecond } from '../../../constants/geminiSleepSecond';
 
+const DAYS_BEFORE_TODAY = 1;
+
 type ItMediaArticle = {
 	title: string,
 	pubDate: Date,
@@ -24,7 +26,7 @@ export const getItMediaMedium = async () => {
         const slicedItMediaArticlesPromises = latestItMediaArticles.filter((article: ItMediaArticle) => {
             const now = new Date();
             // 前日の朝5時を計算
-            const yesterdayMorning5AM = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1, 5, 0, 0);
+            const yesterdayMorning5AM = new Date(now.getFullYear(), now.getMonth(), now.getDate() - DAYS_BEFORE_TODAY, 5, 0, 0);
 
             const articleDate = new Date(article.pubDate);
 
