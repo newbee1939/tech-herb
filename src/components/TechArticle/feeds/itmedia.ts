@@ -1,4 +1,5 @@
 import { articleLimit } from "../constants/articleLimit";
+import { answerFromGenerativeAi } from '../../../libs/googleGenerativeAI';
 import { type TechArticle } from '../types/techArticle';
 import { sleep } from '../../../utils/sleep';
 import { geminiSleepSecond } from '../../../constants/geminiSleepSecond';
@@ -30,7 +31,7 @@ export const getItMediaMedium = async () => {
             // NOTE: 前日の朝5時以降の情報を取得する
             // そうすればmainマージ時に更新しても表示される内容は一定（前日の朝5時以降に投稿された記事）になる
             return articleDate >= yesterdayMorning5AM;
-        }).slice(0, articleLimit).map((article: ItMediaArticle) => {
+        }).slice(0, articleLimit).map(async(article: ItMediaArticle) => {
             const response = await fetch(article.link);
             const bodyHtml = await response.text();
 

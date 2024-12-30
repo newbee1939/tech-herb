@@ -1,4 +1,5 @@
 import { articleLimit } from "../constants/articleLimit";
+import { answerFromGenerativeAi } from '../../../libs/googleGenerativeAI';
 import { type TechArticle } from '../types/techArticle';
 import { sleep } from '../../../utils/sleep';
 import { geminiSleepSecond } from '../../../constants/geminiSleepSecond';
