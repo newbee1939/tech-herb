@@ -6,16 +6,16 @@ const todayReleasedTechBooks: TechBook[] = await getTodayReleasedTechBooks();
 
 ---
 
-<!-- TODO: ない場合は表示しない -->
-
-<h2>本日発売の技術書一覧</h2>
-<ol class="tech-book-list">
-	{todayReleasedTechBooks.map((book) => (
-		<li class="tech-book-card">
-			<a href={book.itemUrl} target="_blank">{book.title}</a>
-		</li>
-	))}
-</ol>
+{ todayReleasedTechBooks.length > 0 &&
+	<h2>本日発売の技術書一覧</h2>
+	<ol class="tech-book-list">
+		{todayReleasedTechBooks.map((book) => (
+			<li class="tech-book-card">
+				<a href={book.itemUrl} target="_blank">{book.title}</a>
+			</li>
+		))}
+	</ol>
+}
 
 <style>
 	.tech-book-list {

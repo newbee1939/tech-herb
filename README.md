@@ -76,69 +76,43 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 - 表示したい技術情報
   - 技術記事(様々なサイト)
     - 新着記事
-      - Technology Radar など新着がないものは普段は非表示
-      - たまに投稿されたらトップに分かりやすく表示
       - メディア一覧表示機能
-      - 差分更新
-        - 必要なものだけ表示する
-      - プルダウンをクリックしたら記事の3行要約が出るように
-      - 企業テックブログRSS
-        - https://yamadashy.github.io/tech-blog-rss-feed/
-    - 人気記事
-    - タイトルクリックしたらメディア一覧へ
     - 投稿をツイートする機能
       - Xのボタンを表示する
-    - ブックマーク機能?
-      - 簡単なコメントと共にブックマークできる
-      - ブックマークしたものを一覧で表示
-  - 技術動画
-  - 技術音声
+    - タイトルクリックしたらメディア一覧へ
   - GitHub のリリース情報
-  - GitHub の人気リポジトリ情報
-  - 人気エンジニア関連ツイート
-    - 自分がまとめたリストを表示させる
   - 技術イベント・カンファレンス情報
-  - 自分の投稿
-    - Zenn の feed など？
   - memoのCollectInformation
     - 全て含める
-  - Thingsの技術情報
-    - 全て含める
 - 作成したい機能
+  - リンク入力したら要約してくれるページ
   -  その他の技術記事
     - TOPページに表示していない技術記事の情報を一覧で表示
       - TOPに出しているやつは出さなければいい
   - 管理人のピックアップ記事
     - 意見と共に
-  - 投稿日が1日前の今以降の記事のみ表示させたら最新記事のみ出すことになる
   - 404ページなど
   - HTMLを要約してPodcastの自動更新
-  - Podcastでその日のハイライトを聴けるように
+    - Podcastでその日のハイライトを聴けるように
   - 英語の翻訳
     - https://gigazine.net/news/20241108-kagi-translate/?utm_source=x&utm_medium=sns&utm_campaign=x_post&utm_content=20241108-kagi-translate
     - APIある？
-  - 独自ドメイン
-  - 上に戻るボタン
   - Biomeコマンドをpackage.jsonに追加
     - コマンド実行してフォーマットも直す
   - 独自ドメインを取得する
   - 検索機能
     - 過去分も含めて
   - アドセンスで収益化
-  - ツイートボタン
-    - 別タブで
-  - 過去分をCloudflare D1に保存
-    - バックナンバー
-    - サイトは重くならないように
-    - build時に通信？
   - トップに戻るボタン
     - クリックしたら最上部までスライド
   - アプリ名のところはページトップに戻るボタンにする
   - メインのテック記事以外は別ページとして切り出す
     - テック記事一覧
       - みたいな
-  - 前日の朝5時以降の情報を取る。新着の場合
-    - そうすればmainマージ時に更新しても表示される内容は一定になる
+  - 429エラー対策
+    - APIキーを増やす？？
+      - Geminiのキー発行: https://aistudio.google.com/app/apikey?hl=ja
+    - sleepの時間を延ばす
 - 実装面
   - もっと容易に購読内容の変更が出来るようにしたい
     - RSS取得処理など共通化？
@@ -148,6 +122,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
       - 記事調べたり
       - どうすれば自分自身が保守しやすいか？
       - 正解はない
+  - デザインをより綺麗にしたい
 - 確認
   - RSSフォーマット決まっている？
   - 管理人のピックアップ記事(意見と共に)
@@ -204,11 +179,15 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - Cloudflare Web Analytics
 - パッケージ更新管理
   - Dependabot
+    - 自動更新したい
 - その他
   - Husky
   - [generative-ai-js](https://github.com/google-gemini/generative-ai-js)
   - [paapi](https://webservices.amazon.com/paapi5/documentation/quick-start/using-sdk.html#nodejs)
   - Vertex AI
+  - GitHub Copilot
+  - devcontainer
+    - 環境を作る
 
 ## システムアーキテクチャ
 
@@ -263,6 +242,7 @@ GitHub Actions(CD) -> Cloudflare Pages
 
 ## 設計の本(Tech Herbに取り入れ)
 
-- hoge
+- 良いコード/悪いコードで学ぶ設計入門
+  - 進行中
 
 ## 設計の記事(Tech Herbに取り入れ)
