@@ -118,6 +118,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
       - 記事調べたり
       - どうすれば自分自身が保守しやすいか？
       - 正解はない
+  - デザインをより綺麗にしたい
 - 確認
   - RSSフォーマット決まっている？
   - 管理人のピックアップ記事(意見と共に)
