@@ -75,8 +75,6 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 
 - 表示したい技術情報
   - 技術記事(様々なサイト)
-    - 投稿をツイートする機能
-      - Xのボタンを表示する
     - 新着記事
       - メディア一覧表示機能
     - タイトルクリックしたらメディア一覧へ
