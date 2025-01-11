@@ -1,0 +1,20 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const { title, link, hashTags } = Astro.props;
+
+hashTags.push("TechHerb");
+---
+
+<a href=`https://twitter.com/intent/tweet?url=${link}&text=${title}%0A%0A&hashtags=${hashTags.join(",")}` target="_blank">
+    <Icon name="fa6-brands:square-x-twitter" size="25" />
+</a>
+
+<style lang="css">
+    a {
+        vertical-align: text-bottom;
+    }
+    [data-icon="fa6-brands:square-x-twitter"] {
+        color: black;
+    }
+</style>
