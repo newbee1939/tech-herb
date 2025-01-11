@@ -103,7 +103,6 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - アドセンスで収益化
   - トップに戻るボタン
     - クリックしたら最上部までスライド
-  - アプリ名のところはページトップに戻るボタンにする
   - メインのテック記事以外は別ページとして切り出す
     - テック記事一覧
       - みたいな
