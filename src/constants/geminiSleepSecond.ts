@@ -1,1 +1,1 @@
-export const geminiSleepSecond = 25;
+export const geminiSleepSecond = 60;
