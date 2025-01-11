@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<header>
-			<h2>Tech Herb 🌿</h2>
+			<h2><a href="/">Tech Herb 🌿</a></h2>
 		</header>
 		<!-- slotに子要素が入る -->
 		<slot />
@@ -25,6 +25,10 @@
 	}
 	header h2 {
 		padding-left: 10px;
+	}
+	header h2 a {
+		color: white;
+		text-decoration: none;
 	}
 </style>
 <style is:global>
