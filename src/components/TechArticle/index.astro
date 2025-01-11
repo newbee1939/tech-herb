@@ -1,7 +1,9 @@
 ---
+import XShareButton from '../Common/XShareButton/index.astro';
 import { type TechArticle } from './types/techArticle';
 type TechArticleMedium = {
 	name: string,
+	title: string,
 	link: string,
 	items: TechArticle[],
 }
@@ -44,11 +46,12 @@ const filteredTechArticleMedia = techArticleMedia.filter((techArticleMedium: Tec
 <!-- 媒体毎にループを回す -->
 {filteredTechArticleMedia.map((medium) => (
 	<ol class="tech-article-list">
-		<div class="medium-name"><a href={medium.link} target="_blank">{medium.name}</a></div>
+		<div class="medium-name"><a href={medium.link} target="_blank">{medium.title}</a></div>
 	{/* 媒体内の記事毎にループを回す */}
 	{medium.items.map((item) => (
 		<li class="tech-article-card">
 			<a href={item.link} target="_blank">{item.title}</a>
+			<XShareButton title={item.title} link={item.link} hashTags={[medium.name]} />
 			<p>{item.summarizedBody}</p>
 		</li>
 	))}
