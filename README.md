@@ -75,6 +75,8 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 
 - 表示したい技術情報
   - GitHub のリリース情報
+    - https://github.com/withastro/astro/releases
+    - 今これ
   - 技術イベント・カンファレンス情報
   - memoのCollectInformation
     - 全て含める
