@@ -74,10 +74,6 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 ## 表示内容
 
 - 表示したい技術情報
-  - 技術記事(様々なサイト)
-    - 新着記事
-      - メディア一覧表示機能
-    - タイトルクリックしたらメディア一覧へ
   - GitHub のリリース情報
   - 技術イベント・カンファレンス情報
   - memoのCollectInformation
