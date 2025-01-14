@@ -1,7 +1,5 @@
 # Tech Herb🌿
 
-テクぺディア？
-TechPedia
 テックオール？(Tech All)
 My Tech All
 Tech Owl
