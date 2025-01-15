@@ -114,6 +114,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - importは絶対パスで指定。また、importは自動補完できるように
   - devcontainerで動くように
   - BiomeのLinterやFormatterが動くように
+  - ローカルでDocker環境を構築する
 - 確認
   - RSSフォーマット決まっている？
   - 管理人のピックアップ記事(意見と共に)
