@@ -102,6 +102,8 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - devcontainerで動くように
   - BiomeのLinterやFormatterが動くように
   - ローカルでDocker環境を構築する
+  - build時間を表示したい
+    - 最終更新がいつかを把握するため
 - 確認
   - RSSフォーマット決まっている？
   - 管理人のピックアップ記事(意見と共に)
