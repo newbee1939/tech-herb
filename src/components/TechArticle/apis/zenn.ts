@@ -48,8 +48,9 @@ export const getZennMedium = async () => {
         slicedZennArticles = [];
     }
     return {
-        name: "Zennのトレンド記事",
-        link: "https://www.publickey1.jp/",
+        name: "Zenn",
+        title: "Zennのトレンド記事",
+        link: "https://zenn.dev/",
         items: slicedZennArticles,
     }
 }

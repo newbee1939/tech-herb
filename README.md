@@ -1,7 +1,5 @@
 # Tech Herb🌿
 
-テクぺディア？
-TechPedia
 テックオール？(Tech All)
 My Tech All
 Tech Owl
@@ -74,41 +72,16 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 ## 表示内容
 
 - 表示したい技術情報
-  - 技術記事(様々なサイト)
-    - 新着記事
-      - メディア一覧表示機能
-    - 投稿をツイートする機能
-      - Xのボタンを表示する
-    - タイトルクリックしたらメディア一覧へ
-  - GitHub のリリース情報
   - 技術イベント・カンファレンス情報
+    - イマココ🚀
   - memoのCollectInformation
     - 全て含める
 - 作成したい機能
   - リンク入力したら要約してくれるページ
-  -  その他の技術記事
-    - TOPページに表示していない技術記事の情報を一覧で表示
-      - TOPに出しているやつは出さなければいい
-  - 管理人のピックアップ記事
-    - 意見と共に
-  - 404ページなど
   - HTMLを要約してPodcastの自動更新
     - Podcastでその日のハイライトを聴けるように
-  - 英語の翻訳
-    - https://gigazine.net/news/20241108-kagi-translate/?utm_source=x&utm_medium=sns&utm_campaign=x_post&utm_content=20241108-kagi-translate
-    - APIある？
-  - Biomeコマンドをpackage.jsonに追加
-    - コマンド実行してフォーマットも直す
   - 独自ドメインを取得する
-  - 検索機能
-    - 過去分も含めて
   - アドセンスで収益化
-  - トップに戻るボタン
-    - クリックしたら最上部までスライド
-  - アプリ名のところはページトップに戻るボタンにする
-  - メインのテック記事以外は別ページとして切り出す
-    - テック記事一覧
-      - みたいな
   - 429エラー対策
     - APIキーを増やす？？
       - Geminiのキー発行: https://aistudio.google.com/app/apikey?hl=ja
@@ -123,6 +96,11 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
       - どうすれば自分自身が保守しやすいか？
       - 正解はない
   - デザインをより綺麗にしたい
+  - テストを実装する。Viteで
+  - importは絶対パスで指定。また、importは自動補完できるように
+  - devcontainerで動くように
+  - BiomeのLinterやFormatterが動くように
+  - ローカルでDocker環境を構築する
 - 確認
   - RSSフォーマット決まっている？
   - 管理人のピックアップ記事(意見と共に)

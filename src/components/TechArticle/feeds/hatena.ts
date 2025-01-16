@@ -43,7 +43,8 @@ export const getHatenaMedium = async () => {
         slicedHatenaArticles = [];
     }
     return {
-        name: "はてなブックマーク(テクノロジー)のトレンド記事",
+        name: "はてなブックマーク",
+        title: "はてなブックマーク(テクノロジー)のトレンド記事",
         link: "https://b.hatena.ne.jp/hotentry/it",
         items: slicedHatenaArticles,
     }

@@ -55,7 +55,8 @@ export const getItMediaMedium = async () => {
         slicedItMediaArticles = [];
     }
     return {
-        name: "ITmediaの新着記事",
+        name: "ITmedia",
+        title: "ITmediaの新着記事",
         link: "https://www.itmedia.co.jp/",
         items: slicedItMediaArticles,
     }

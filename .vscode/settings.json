@@ -2,10 +2,12 @@
   "cSpell.words": [
     "astrojs",
     "bunx",
+    "commitish",
     "Ggen",
     "hatena",
     "Hono",
     "HTMX",
+    "iconify",
     "paapi",
     "Pedia",
     "Preact",
@@ -13,7 +15,9 @@
     "RAKUTEN",
     "Tmedia",
     "tsconfigs",
-    "webservices"
+    "webservices",
+    "withastro",
+    "zipball"
   ],
   "editor.defaultFormatter": "biomejs.biome",
   "editor.formatOnSave": true,

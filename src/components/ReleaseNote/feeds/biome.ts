@@ -26,6 +26,7 @@ export const getBiomeReleaseNote = async () => {
         }).map((releaseNote: BiomeReleaseNote) => {
             return {
                 releaseDate: releaseNote.pubDate,
+                // TODO: ここって配列である必要ある？
                 releaseNoteItems: [{
                     title: releaseNote.title,
                     link: releaseNote.link,

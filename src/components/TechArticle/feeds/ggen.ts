@@ -58,7 +58,8 @@ export const getGgenMedium = async () => {
         slicedGgenArticles  = [];
     }
     return {
-        name: "Ggenの新着記事",
+        name: "Ggen",
+        title: "Ggenの新着記事",
         link: "https://blog.g-gen.co.jp/",
         items: slicedGgenArticles,
     };

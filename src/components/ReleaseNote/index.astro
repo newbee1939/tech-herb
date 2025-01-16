@@ -1,5 +1,6 @@
 ---
 import { type ReleaseNote } from './types/releaseNote';
+// TODO: 型ファイルに切り出したい
 type TechTool = {
 	name: string,
 	link: string,
@@ -12,9 +13,13 @@ const biomeReleaseNotes = await getBiomeReleaseNote();
 import { getGoogleCloudReleaseNote } from './feeds/googleCloud';
 const googleCloudReleaseNotes = await getGoogleCloudReleaseNote();
 
+import { getGitHubReleaseNotesList } from './apis/github';
+const githubReleseNotesList = await getGitHubReleaseNotesList();
+
 const techTools: TechTool[] = [
 	biomeReleaseNotes,
 	googleCloudReleaseNotes,
+	...githubReleseNotesList,
 ];
 const techToolsWithMultipleReleaseNotes = techTools.filter((techTool) => {
 	return techTool.releaseNotes.length > 0;
