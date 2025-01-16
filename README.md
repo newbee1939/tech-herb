@@ -74,6 +74,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 - 表示したい技術情報
   - 技術イベント・カンファレンス情報
     - イマココ🚀
+    - connpass API
   - memoのCollectInformation
     - 全て含める
 - 作成したい機能
