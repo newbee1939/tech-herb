@@ -56,12 +56,13 @@ const libraries = [
  */
 async function getReleaseNotes(owner: string, repo: string) {
   const url = `${GITHUB_API_BASE}/repos/${owner}/${repo}/releases`;
-  const headers = GITHUB_TOKEN
-    ? { Authorization: `Bearer ${GITHUB_TOKEN}` }
-    : {};
 
   try {
-    const releaseNotes = (await(await fetch(url, { headers })).json());
+    const releaseNotes = (await(await fetch(url, {
+      headers: {
+        "Authorization": `Bearer ${GITHUB_TOKEN}`,
+      },
+    })).json());
     const mappedReleaseNotesPromises = releaseNotes.filter((releaseNote: GitHubReleaseNote) => {
       // TODO: グローバルなutilsに切り出す(Vitestでテストも書く)
       const today = new Date();
