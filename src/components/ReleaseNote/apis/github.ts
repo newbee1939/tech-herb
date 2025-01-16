@@ -44,7 +44,7 @@ type GitHubReleaseNote = {
 };
 
 const GITHUB_API_BASE = "https://api.github.com";
-// const GITHUB_TOKEN = import.meta.env.GITHUB_TOKEN; // TODO: GitHubトークンを環境変数から取得
+const GITHUB_TOKEN = import.meta.env.GITHUB_TOKEN;
 
 const libraries = [
   { name: "Astro", link: "https://github.com/withastro/astro/releases", owner: "withastro", repo: "astro" },
@@ -56,18 +56,17 @@ const libraries = [
  */
 async function getReleaseNotes(owner: string, repo: string) {
   const url = `${GITHUB_API_BASE}/repos/${owner}/${repo}/releases`;
-  // const headers = GITHUB_TOKEN
-  //   ? { Authorization: `Bearer ${GITHUB_TOKEN}` }
-  //   : {};
+  const headers = GITHUB_TOKEN
+    ? { Authorization: `Bearer ${GITHUB_TOKEN}` }
+    : {};
 
   try {
-    // const releaseNotes = (await(await fetch(url, { headers })).json());
-    const releaseNotes = (await(await fetch(url)).json());
+    const releaseNotes = (await(await fetch(url, { headers })).json());
     const mappedReleaseNotesPromises = releaseNotes.filter((releaseNote: GitHubReleaseNote) => {
       // TODO: グローバルなutilsに切り出す(Vitestでテストも書く)
       const today = new Date();
       // TODO: 対象のライブラリごとに切り替えたい
-      const baseDate = new Date(today.setDate(today.getDate() - 1));
+      const baseDate = new Date(today.setDate(today.getDate() - 3));
       return new Date(releaseNote.published_at) > baseDate;
     }).map(async (releaseNote: GitHubReleaseNote) => {
       const prompt = `次のリリースノートの内容の特に重要な部分を日本語で分かりやすく80文字程度で簡潔に要約してください！文体は「ですます調」でお願いします！！: ${releaseNote.body}`
