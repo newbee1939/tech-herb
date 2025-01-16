@@ -73,23 +73,15 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 
 - 表示したい技術情報
   - 技術イベント・カンファレンス情報
+    - イマココ🚀
   - memoのCollectInformation
     - 全て含める
 - 作成したい機能
   - リンク入力したら要約してくれるページ
-  - 404ページなど
   - HTMLを要約してPodcastの自動更新
     - Podcastでその日のハイライトを聴けるように
-  - 英語の翻訳
-    - https://gigazine.net/news/20241108-kagi-translate/?utm_source=x&utm_medium=sns&utm_campaign=x_post&utm_content=20241108-kagi-translate
-    - APIある？
-  - Biomeコマンドをpackage.jsonに追加
-    - コマンド実行してフォーマットも直す
   - 独自ドメインを取得する
   - アドセンスで収益化
-  - メインのテック記事以外は別ページとして切り出す
-    - テック記事一覧
-      - みたいな
   - 429エラー対策
     - APIキーを増やす？？
       - Geminiのキー発行: https://aistudio.google.com/app/apikey?hl=ja

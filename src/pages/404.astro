@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+    <main>
+        <h1>404</h1>
+    </main>
+</Layout>
+
+<style>
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* ビューポートの高さ全体を確保 */
+        margin: auto;
+        padding: 1rem;
+        color: rgb(245, 239, 239);
+        font-size: 20px;
+        line-height: 1.6;
+        text-align: center; /* 中央揃え */
+    }
+
+    @media (min-width: 768px) {
+        main {
+            max-width: calc(100% - 4rem);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        main {
+            max-width: calc(100% - 12rem);
+        }
+    }
+
+    h1 {
+        font-size: 7rem; /* 404が目立つように大きく設定 */
+        font-weight: bold;
+        margin: 0;
+    }
+</style>
