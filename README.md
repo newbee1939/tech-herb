@@ -232,3 +232,6 @@ GitHub Actions(CD) -> Cloudflare Pages
   - 進行中
 
 ## 設計の記事(Tech Herbに取り入れ)
+
+- [SPA Componentの推しディレクトリ構成について語る](https://zenn.dev/knowledgework/articles/99f8047555f700)
+  - まだ読んでない
