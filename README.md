@@ -74,6 +74,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
 - 表示したい技術情報
   - 技術イベント・カンファレンス情報
     - イマココ🚀
+    - connpass API
   - memoのCollectInformation
     - 全て含める
 - 作成したい機能
@@ -101,6 +102,8 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - devcontainerで動くように
   - BiomeのLinterやFormatterが動くように
   - ローカルでDocker環境を構築する
+  - build時間を表示したい
+    - 最終更新がいつかを把握するため
 - 確認
   - RSSフォーマット決まっている？
   - 管理人のピックアップ記事(意見と共に)
@@ -209,6 +212,10 @@ GitHub Actions(CD) -> Cloudflare Pages
   - 10ページ目までしか取得できない
   - 発売日を指定して取得できない
   - BrowseNodeIdをうまく使うことで対象を絞ることができる
+- mainでschedule triggerが動いた時に、build・deployが動かない
+  - Cloudflare Pagesでは変更がないとbuildが動かないっぽい？
+  -  以下の資料にあるように、Cloudflare Pagesでは空コミットでもデプロイは走る
+    - https://developers.cloudflare.com/pages/configuration/build-watch-paths/#build-watch-paths:~:text=A%20push%20event%20contains%200%20file%20changes%2C%20in%20case%20a%20user%20pushes%20a%20empty%20push%20event%20to%20trigger%20a%20build
 
 ## StudyLater
 

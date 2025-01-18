@@ -6,7 +6,8 @@ name: Deploy To Cloudflare Pages
 
 on:
   schedule:
-    - cron: "0 5 * * *" # 毎朝5時に更新
+    # - cron: "0 20 * * *" # 毎朝5時に更新
+    - cron: "30 10 * * *"
   push:
     branches:
       - '*'
@@ -17,6 +18,19 @@ jobs:
     name: Deploy To Cloudflare Pages
     steps:
       - uses: actions/checkout@v4
+
+      # スケジュールトリガーのときだけ空コミットを実行
+      # 変更がないとデプロイ時のbuildが走らないので..
+      # 以下の資料にあるように、Cloudflare Pagesでは空コミットでもデプロイは走る
+      # https://developers.cloudflare.com/pages/configuration/build-watch-paths/#build-watch-paths:~:text=A%20push%20event%20contains%200%20file%20changes%2C%20in%20case%20a%20user%20pushes%20a%20empty%20push%20event%20to%20trigger%20a%20build
+      - name: Make an empty commit to main (schedule only)
+        if: github.event_name == 'schedule'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -m "Trigger build"
+          git push origin main
+
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
