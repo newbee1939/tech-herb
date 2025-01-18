@@ -1,5 +1,7 @@
 import { type ReleaseNote } from '../types/releaseNote';
 import { answerFromGenerativeAi } from '../../../libs/googleGenerativeAI';
+import { sleep } from '../../../utils/sleep';
+import { geminiSleepSecond } from '../../../constants/geminiSleepSecond';
 
 type GoogleCloudReleaseNote = {
 	title: string,
@@ -27,6 +29,9 @@ export const getGoogleCloudReleaseNote = async () => {
         }).map(async (releaseNote: GoogleCloudReleaseNote) => {
             const prompt = `次のGoogle Cloudのリリースノートの内容の特に重要な部分を日本語で分かりやすく80文字程度で簡潔に要約してください！文体は「ですます調」でお願いします！！: ${releaseNote.description}`
             const description = await answerFromGenerativeAi(prompt);
+
+            // NOTE: Rate Limit対策
+            await sleep(geminiSleepSecond);
 
             const { pubDate: releaseDate, title, link } = releaseNote;
 
