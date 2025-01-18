@@ -3,7 +3,7 @@ name: Deploy To Cloudflare Pages
 on:
   schedule:
     # - cron: "0 19 * * *" # 毎朝4時に更新build開始
-    - cron: "45 11 * * *"
+    - cron: "30 12 * * *" #9:30
   push:
     branches:
       - '*'
