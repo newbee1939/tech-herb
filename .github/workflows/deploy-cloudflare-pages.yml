@@ -7,7 +7,7 @@ name: Deploy To Cloudflare Pages
 on:
   schedule:
     # - cron: "0 20 * * *" # 毎朝5時に更新
-    - cron: "30 10 * * *"
+    - cron: "0 11 * * *"
   push:
     branches:
       - '*'
@@ -25,6 +25,8 @@ jobs:
       # https://developers.cloudflare.com/pages/configuration/build-watch-paths/#build-watch-paths:~:text=A%20push%20event%20contains%200%20file%20changes%2C%20in%20case%20a%20user%20pushes%20a%20empty%20push%20event%20to%20trigger%20a%20build
       - name: Make an empty commit to main (schedule only)
         if: github.event_name == 'schedule'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
