@@ -206,6 +206,8 @@ GitHub Actions(CD) -> Cloudflare Pages
 
 ## 学び・気付き
 
+TODO: それぞれ記事にできるものは記事にしたい
+
 - Gemini APIは無料で簡単に使える
 - wrangler-actionは簡単にpreview環境も作成されてとても便利
 - paapiは制約が多い
