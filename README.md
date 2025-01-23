@@ -85,6 +85,8 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
       - Geminiのキー発行: https://aistudio.google.com/app/apikey?hl=ja
     - sleepの時間を延ばす
 - 実装面
+  - デザインの参考。取り入れる
+    - https://catnose.me/notes
   - もっと容易に購読内容の変更が出来るようにしたい
     - RSS取得処理など共通化？
     - RSSってレスポンス形式がある程度標準化されている？
