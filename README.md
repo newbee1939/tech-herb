@@ -75,6 +75,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - memoのCollectInformation
     - 全て含める
 - 作成したい機能
+  - 簡単な要約の他に、より詳細な要約も選べるようにしたい。数時間かけてbuild
   - リンク入力したら要約してくれるページ
   - HTMLを要約してPodcastの自動更新
     - Podcastでその日のハイライトを聴けるように
@@ -85,6 +86,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
       - Geminiのキー発行: https://aistudio.google.com/app/apikey?hl=ja
     - sleepの時間を延ばす
 - 実装面
+  - 新刊がない場合は「今日の新刊はありませんん」とだす
   - もっと容易に購読内容の変更が出来るようにしたい
     - RSS取得処理など共通化？
     - RSSってレスポンス形式がある程度標準化されている？
