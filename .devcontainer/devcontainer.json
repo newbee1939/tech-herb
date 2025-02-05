@@ -13,7 +13,9 @@
         "astro-build.astro-vscode",
         "biomejs.biome",
         "Gruntfuggly.todo-tree",
-        "vscodevim.vim"
+        "vscodevim.vim",
+        "PKief.material-icon-theme",
+        "miguelsolorio.fluent-icons"
       ]
     }
   }

@@ -28,5 +28,48 @@
     "source.organizeImports.biome": "explicit"
   },
   "extensions.ignoreRecommendations": false,
-  "typescript.preferences.importModuleSpecifier": "non-relative"
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "editor.tabSize": 2,
+  "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+  "window.zoomLevel": 2,
+  // GitHub Copilot
+  "github.copilot.chat.localeOverride": "ja",
+  "github.copilot.chat.edits.enabled": true,
+  // VSCodeの不要な要素を非表示
+  "workbench.editor.showTabs": "none",
+  "editor.minimap.enabled": false,
+  "workbench.statusBar.visible": false,
+  "window.customTitleBarVisibility": "windowed",
+  "editor.glyphMargin": false,
+  "editor.folding": false,
+  "breadcrumbs.symbolPath": "off",
+  "workbench.activityBar.location": "top",
+  // VSCodeのテーマなど
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "GitHub Dark Default",
+  // プロダクトアイコン
+  "workbench.productIconTheme": "fluent-icons",
+  // Turbo Console Log
+  "turboConsoleLog.addSemicolonInTheEnd": true,
+  "turboConsoleLog.insertEnclosingClass": false,
+  "turboConsoleLog.insertEnclosingFunction": false,
+  "turboConsoleLog.quote": "'",
+  "turboConsoleLog.wrapLogMessage": true,
+  // エクスプローラーのインデント
+  "workbench.tree.indent": 24,
+  // タブ数制限
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.value": 3,
+  // ブラケットペアの範囲を可視化
+  "editor.guides.bracketPairs": "active",
+  // Monaspace
+  "editor.fontFamily": "Monaspace Neon",
+  // スペースの可視化
+  "editor.renderWhitespace": "boundary",
+  // save時に不要なスペースを削除
+  "files.trimTrailingWhitespace": true,
+  // 不要な効果音をOFFに
+  "editor.accessibilitySupport": "off",
+  // ファイル末尾に自動的に改行を追加
+  "files.insertFinalNewline": true
 }
