@@ -120,6 +120,7 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - 管理人プロフィール
 - その他の記事
   - Hacker News (Y Combinator)
+    - https://catnose.me/lab/hackernews-ja
   - GitHub Blog
   - StackOverflowBlog
     - https://stackoverflow.blog/
@@ -129,6 +130,10 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
     - https://www.infoq.com/jp/
   - TECHNOEDGE
     - https://www.techno-edge.net/
+  - 生成AIウィークリー
+    - https://www.techno-edge.net/special/557/recent/%E7%94%9F%E6%88%90AI%E3%82%A6%E3%82%A3%E3%83%BC%E3%82%AF%E3%83%AA%E3%83%BC
+    - https://ai-weekly.ai/
+    - https://aiweekly.co/
 
 ## 使用技術
 
