@@ -118,6 +118,17 @@ https://www.figma.com/design/RLUoqJ7zmrM9HuDYnSlh6Z/Tech-Herb?node-id=0-1&node-t
   - 管理人のピックアップ記事(意見と共に)
   - 管理人ブログ
   - 管理人プロフィール
+- その他の記事
+  - Hacker News (Y Combinator)
+  - GitHub Blog
+  - StackOverflowBlog
+    - https://stackoverflow.blog/
+  - DZone
+    - https://dzone.com/
+  - InfoQ
+    - https://www.infoq.com/jp/
+  - TECHNOEDGE
+    - https://www.techno-edge.net/
 
 ## 使用技術
 
