@@ -21,10 +21,16 @@
     "withastro",
     "zipball"
   ],
+  // 絶対パスのインポート
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  // フォーマッターの設定
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
+  },
   "window.zoomLevel": 2,
-  // GitHub Copilot
-  "github.copilot.chat.localeOverride": "ja",
-  "chat.agent.enabled": true,
   // VSCodeの不要な要素を非表示
   "workbench.editor.showTabs": "none",
   "editor.minimap.enabled": false,
