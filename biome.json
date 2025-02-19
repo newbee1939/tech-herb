@@ -10,9 +10,6 @@
       "style": {
         "useImportType": "off"
       },
-      "correctness": {
-        "noUnusedImports": "error"
-      },
       "complexity": {
         "recommended": true
       }

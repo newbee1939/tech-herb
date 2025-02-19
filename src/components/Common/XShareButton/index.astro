@@ -3,7 +3,7 @@ import { Icon } from 'astro-icon/components';
 
 const { title, link, hashTags } = Astro.props;
 
-hashTags.push("TechHerb");
+hashTags.push('TechHerb');
 ---
 
 <a href=`https://twitter.com/intent/tweet?url=${link}&text=${title}%0A%0A&hashtags=${hashTags.join(",")}` target="_blank">
