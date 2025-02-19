@@ -7,7 +7,17 @@
         "Gruntfuggly.todo-tree",
         "vscodevim.vim",
         "PKief.material-icon-theme",
-        "miguelsolorio.fluent-icons"
+        "miguelsolorio.fluent-icons",
+        "github.copilot",
+        "github.copilot-chat",
+        "eamodio.gitlens",
+        "streetsidesoftware.code-spell-checker",
+        "yoavbls.pretty-ts-errors",
+        "github.vscode-pull-request-github",
+        "formulahendry.auto-rename-tag",
+        "shardulm94.trailing-spaces",
+        "github.github-vscode-theme",
+        "ChakrounAnas.turbo-console-log"
       ]
     }
   }
