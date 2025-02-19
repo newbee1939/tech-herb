@@ -261,3 +261,5 @@ TODO: それぞれ記事にできるものは記事にしたい
 
 - [SPA Componentの推しディレクトリ構成について語る](https://zenn.dev/knowledgework/articles/99f8047555f700)
   - まだ読んでない
+
+## 環境構築
