@@ -30,12 +30,10 @@
     "source.fixAll.biome": "explicit",
     "source.organizeImports.biome": "explicit"
   },
-  "window.zoomLevel": 2,
   // VSCodeの不要な要素を非表示
   "workbench.editor.showTabs": "none",
   "editor.minimap.enabled": false,
   "workbench.statusBar.visible": false,
-  "window.customTitleBarVisibility": "windowed",
   "editor.glyphMargin": false,
   "editor.folding": false,
   "breadcrumbs.symbolPath": "off",
@@ -45,12 +43,6 @@
   "workbench.colorTheme": "GitHub Dark Default",
   // プロダクトアイコン
   "workbench.productIconTheme": "fluent-icons",
-  // Turbo Console Log
-  "turboConsoleLog.addSemicolonInTheEnd": true,
-  "turboConsoleLog.insertEnclosingClass": false,
-  "turboConsoleLog.insertEnclosingFunction": false,
-  "turboConsoleLog.quote": "'",
-  "turboConsoleLog.wrapLogMessage": true,
   // エクスプローラーのインデント
   "workbench.tree.indent": 24,
   // タブ数制限
