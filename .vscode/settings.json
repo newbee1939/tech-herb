@@ -25,11 +25,11 @@
   "typescript.preferences.importModuleSpecifier": "non-relative",
   // フォーマッターの設定
   "editor.defaultFormatter": "biomejs.biome",
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.biome": "explicit",
-    "source.organizeImports.biome": "explicit"
-  },
+  // "editor.formatOnSave": true,
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll.biome": "explicit",
+  //   "source.organizeImports.biome": "explicit"
+  // },
   // VSCodeの不要な要素を非表示
   "workbench.editor.showTabs": "none",
   "editor.minimap.enabled": false,
