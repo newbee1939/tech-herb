@@ -3,7 +3,6 @@ import { type TechBook } from './types/techBook';
 
 import { getTodayReleasedTechBooks } from './apis/rakuten-book-api';
 const todayReleasedTechBooks: TechBook[] = await getTodayReleasedTechBooks();
-
 ---
 
 { todayReleasedTechBooks.length > 0 &&

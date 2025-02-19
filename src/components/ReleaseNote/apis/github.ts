@@ -1,6 +1,6 @@
+import { geminiSleepSecond } from '../../../constants/geminiSleepSecond';
 import { answerFromGenerativeAi } from '../../../libs/googleGenerativeAI';
 import { sleep } from '../../../utils/sleep';
-import { geminiSleepSecond } from '../../../constants/geminiSleepSecond';
 
 type GitHubReleaseNote = {
   url: string;
@@ -43,12 +43,22 @@ type GitHubReleaseNote = {
   body: string;
 };
 
-const GITHUB_API_BASE = "https://api.github.com";
+const GITHUB_API_BASE = 'https://api.github.com';
 const GITHUB_TOKEN = import.meta.env.GITHUB_TOKEN;
 
 const libraries = [
-  { name: "Astro", link: "https://github.com/withastro/astro/releases", owner: "withastro", repo: "astro" },
-  { name: "TypeScript", link: "https://github.com/withastro/astro/releases", owner: "microsoft", repo: "typescript" },
+  {
+    name: 'Astro',
+    link: 'https://github.com/withastro/astro/releases',
+    owner: 'withastro',
+    repo: 'astro',
+  },
+  {
+    name: 'TypeScript',
+    link: 'https://github.com/withastro/astro/releases',
+    owner: 'microsoft',
+    repo: 'typescript',
+  },
 ];
 
 /**
@@ -58,35 +68,45 @@ async function getReleaseNotes(owner: string, repo: string) {
   const url = `${GITHUB_API_BASE}/repos/${owner}/${repo}/releases`;
 
   try {
-    const releaseNotes = (await(await fetch(url, {
-      headers: {
-        "Authorization": `Bearer ${GITHUB_TOKEN}`,
-      },
-    })).json());
-    const mappedReleaseNotesPromises = releaseNotes.filter((releaseNote: GitHubReleaseNote) => {
-      // TODO: グローバルなutilsに切り出す(Vitestでテストも書く)
-      const today = new Date();
-      // TODO: 対象のライブラリごとに切り替えたい
-      const baseDate = new Date(today.setDate(today.getDate() - 3));
-      return new Date(releaseNote.published_at) > baseDate;
-    }).map(async (releaseNote: GitHubReleaseNote) => {
-      const prompt = `次のリリースノートの内容の特に重要な部分を日本語で分かりやすく80文字程度で簡潔に要約してください！文体は「ですます調」でお願いします！！: ${releaseNote.body}`
-      const description = await answerFromGenerativeAi(prompt);
+    const releaseNotes = await (
+      await fetch(url, {
+        headers: {
+          Authorization: `Bearer ${GITHUB_TOKEN}`,
+        },
+      })
+    ).json();
+    const mappedReleaseNotesPromises = releaseNotes
+      .filter((releaseNote: GitHubReleaseNote) => {
+        // TODO: グローバルなutilsに切り出す(Vitestでテストも書く)
+        const today = new Date();
+        // TODO: 対象のライブラリごとに切り替えたい
+        const baseDate = new Date(today.setDate(today.getDate() - 3));
+        return new Date(releaseNote.published_at) > baseDate;
+      })
+      .map(async (releaseNote: GitHubReleaseNote) => {
+        const prompt = `次のリリースノートの内容の特に重要な部分を日本語で分かりやすく80文字程度で簡潔に要約してください！文体は「ですます調」でお願いします！！: ${releaseNote.body}`;
+        const description = await answerFromGenerativeAi(prompt);
 
-      // NOTE: Rate Limit対策
-      await sleep(geminiSleepSecond);
+        // NOTE: Rate Limit対策
+        await sleep(geminiSleepSecond);
 
-      const { published_at: releaseDate, name: title, html_url: link } = releaseNote;
+        const {
+          published_at: releaseDate,
+          name: title,
+          html_url: link,
+        } = releaseNote;
 
-      return {
-        releaseDate,
-        releaseNoteItems: [{
-          title,
-          link,
-          description,
-        }],
-      }
-    });
+        return {
+          releaseDate,
+          releaseNoteItems: [
+            {
+              title,
+              link,
+              description,
+            },
+          ],
+        };
+      });
     const mappedReleaseNotes = await Promise.all(mappedReleaseNotesPromises);
     return mappedReleaseNotes;
   } catch (error) {
@@ -99,7 +119,7 @@ async function getReleaseNotes(owner: string, repo: string) {
  * 複数のライブラリのリリースノート情報を返す
  */
 export async function getGitHubReleaseNotesList() {
-  const gitHubReleaseNotesPromises =  libraries.map(async (library) => {
+  const gitHubReleaseNotesPromises = libraries.map(async (library) => {
     const { owner, repo, name, link } = library;
     const releaseNotes = await getReleaseNotes(owner, repo);
     return {
