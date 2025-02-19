@@ -1,7 +1,4 @@
 {
-  // "features": {
-  //   "ghcr.io/devcontainers-extra/features/node-asdf:0": {}
-  // },
   "customizations": {
     "vscode": {
       "extensions": [
