@@ -2,11 +2,11 @@
 import XShareButton from '../Common/XShareButton/index.astro';
 import { type TechArticle } from './types/techArticle';
 type TechArticleMedium = {
-	name: string,
-	title: string,
-	link: string,
-	items: TechArticle[],
-}
+  name: string;
+  title: string;
+  link: string;
+  items: TechArticle[];
+};
 
 // TODO: メディアが増えたときに対応できるようにしたい
 import { getPublickeyMedium } from './feeds/publickey';
@@ -28,18 +28,20 @@ import { getGgenMedium } from './feeds/ggen';
 const ggenMedium = await getGgenMedium();
 
 const techArticleMedia: TechArticleMedium[] = [
-	publickeyMedium,
-	zennMedium,
-	qiitaMedium,
-	hatenaMedium,
-	itMediaMedium,
-	ggenMedium,
+  publickeyMedium,
+  zennMedium,
+  qiitaMedium,
+  hatenaMedium,
+  itMediaMedium,
+  ggenMedium,
 ];
 
 // NOTE: 記事数が0の媒体は除外する
-const filteredTechArticleMedia = techArticleMedia.filter((techArticleMedium: TechArticleMedium) => {
-	return techArticleMedium.items.length > 0;
-});
+const filteredTechArticleMedia = techArticleMedia.filter(
+  (techArticleMedium: TechArticleMedium) => {
+    return techArticleMedium.items.length > 0;
+  },
+);
 ---
 
 <h2>技術記事</h2>

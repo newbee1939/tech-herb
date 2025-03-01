@@ -2,10 +2,10 @@
 import { type ReleaseNote } from './types/releaseNote';
 // TODO: 型ファイルに切り出したい
 type TechTool = {
-	name: string,
-	link: string,
-	releaseNotes: ReleaseNote[],
-}
+  name: string;
+  link: string;
+  releaseNotes: ReleaseNote[];
+};
 
 import { getBiomeReleaseNote } from './feeds/biome';
 const biomeReleaseNotes = await getBiomeReleaseNote();
@@ -17,13 +17,13 @@ import { getGitHubReleaseNotesList } from './apis/github';
 const githubReleseNotesList = await getGitHubReleaseNotesList();
 
 const techTools: TechTool[] = [
-	biomeReleaseNotes,
-	googleCloudReleaseNotes,
-	...githubReleseNotesList,
+  biomeReleaseNotes,
+  googleCloudReleaseNotes,
+  ...githubReleseNotesList,
 ];
 const techToolsWithMultipleReleaseNotes = techTools.filter((techTool) => {
-	return techTool.releaseNotes.length > 0;
-})
+  return techTool.releaseNotes.length > 0;
+});
 
 // TODO: その他リリースノートをどんどん追記
 // GitHubのリリースノート取得などは共通化できるかも

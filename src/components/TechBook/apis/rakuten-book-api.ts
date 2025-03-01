@@ -1,16 +1,16 @@
-import { type TechBook } from '../types/techBook';
 import { sleep } from '../../../utils/sleep';
+import { type TechBook } from '../types/techBook';
 
 const RAKUTEN_BOOK_SLEEP_SECOND = 10;
 
-type BookItem = { Item: TechBook }
+type BookItem = { Item: TechBook };
 
 const getLastMonth = (date = new Date()) => {
   const lastMonthDate = new Date(date.getFullYear(), date.getMonth() - 1);
   const year = lastMonthDate.getFullYear();
   const month = lastMonthDate.getMonth() + 1; // NOTE:月は0から始まるので+1する
   return `${year}年${month}月`;
-}
+};
 
 const getToday = (date = new Date()) => {
   const year = date.getFullYear();
@@ -18,21 +18,25 @@ const getToday = (date = new Date()) => {
   const day = date.getDate();
 
   return `${year}年${month}月${day}日`;
-}
+};
 
 export const getTodayReleasedTechBooks = async (): Promise<TechBook[]> => {
   try {
-    let techBooks = [];
+    const techBooks = [];
     let count = 1;
 
     while (true) {
-      const techBooksPerPageResponse = await fetch(`https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404?applicationId=${import.meta.env.RAKUTEN_APPLICATION_ID}&booksGenreId=001005&sort=%2DreleaseDate&elements=salesDate,title,itemUrl&page=${count}`);
+      const techBooksPerPageResponse = await fetch(
+        `https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404?applicationId=${import.meta.env.RAKUTEN_APPLICATION_ID}&booksGenreId=001005&sort=%2DreleaseDate&elements=salesDate,title,itemUrl&page=${count}`,
+      );
       const techBooksPerPage = (await techBooksPerPageResponse.json()).Items;
 
       techBooks.push(...techBooksPerPage);
 
       const lastMonth = getLastMonth();
-      const hasLastMonthPublishedBook = techBooksPerPage.some((book: BookItem) => book.Item.salesDate.includes(`${lastMonth}`));
+      const hasLastMonthPublishedBook = techBooksPerPage.some(
+        (book: BookItem) => book.Item.salesDate.includes(`${lastMonth}`),
+      );
 
       if (hasLastMonthPublishedBook) {
         break;
@@ -45,18 +49,20 @@ export const getTodayReleasedTechBooks = async (): Promise<TechBook[]> => {
       await sleep(RAKUTEN_BOOK_SLEEP_SECOND);
     }
     // 今日の発売の書籍に絞る
-    const todayPublishedTechBooks = techBooks.filter((book: BookItem) => {
-      const today = getToday();
-      // TODO: 幅広げてもいいかも。過去一週間の書籍を出す
-      return book.Item.salesDate.includes(today);
-    }).map((book: BookItem) => {
-      const { title, itemUrl, salesDate} = book.Item;
-      return {
-        title,
-        itemUrl,
-        salesDate,
-      }
-    });
+    const todayPublishedTechBooks = techBooks
+      .filter((book: BookItem) => {
+        const today = getToday();
+        // TODO: 幅広げてもいいかも。過去一週間の書籍を出す
+        return book.Item.salesDate.includes(today);
+      })
+      .map((book: BookItem) => {
+        const { title, itemUrl, salesDate } = book.Item;
+        return {
+          title,
+          itemUrl,
+          salesDate,
+        };
+      });
 
     return todayPublishedTechBooks;
   } catch (e) {
@@ -64,4 +70,4 @@ export const getTodayReleasedTechBooks = async (): Promise<TechBook[]> => {
 
     return [];
   }
-}
+};
